@@ -1,0 +1,33 @@
+# Large genomic data
+*.bam
+*.bai
+*.cram
+*.maf
+*.hal
+*.fastq
+*.fastq.gz
+*.fasta
+*.fa
+*.fna
+
+# Generated gene trees and results
+*.nwk
+*.nh
+*.tre
+results/
+outputs/
+figures/
+logs/
+data/
+
+# Local configuration
+config/paths.env
+
+# Python temporary files
+__pycache__/
+*.pyc
+.DS_Store
+
+# Environment folders
+.venv/
+.env/
