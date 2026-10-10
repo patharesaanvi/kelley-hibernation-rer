@@ -2,8 +2,6 @@
 
 Kelley Lab computational research project to test associations between hibernation and gene-specific relative evolutionary rates (RERs) across mammalian lineages.
 
-**Project stage:** input discovery and pilot preparation. No hibernation-associated genes have been identified yet.
-
 ## Workflow
 1. Select a genome alignment (initial candidate: UCSC Hiller 470-mammal Multiz).
 2. Audit target species and map names to alignment identifiers.
