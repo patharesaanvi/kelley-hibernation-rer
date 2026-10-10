@@ -3,7 +3,7 @@
 Kelley Lab computational research project to test associations between hibernation and gene-specific relative evolutionary rates (RERs) across mammalian lineages.
 
 ## Workflow
-1. Select a genome alignment (initial candidate: UCSC Hiller 470-mammal Multiz).
+1. Select a genome alignment (UCSC Hiller 470-mammal Multiz).
 2. Audit target species and map names to alignment identifiers.
 3. Extract high-quality orthologous coding-sequence alignments for a small pilot gene set.
 4. Infer gene-specific branch lengths on a consistent reference topology.
