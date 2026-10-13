@@ -7,7 +7,7 @@ For our hibernation project, we are planning to use the **Hiller 470-mammal alig
 - **Hiller 470:** Contains 470 mammalian genome assemblies representing 431 species.
 - **Zoonomia 241:** Another alignment we considered, but Hiller has better coverage of our target species.
 
-We chose Hiller as our starting dataset because it includes more of the hibernating mammals we want to study, including brown bears, black bears, bats, and rodents.
+I chose Hiller as our starting dataset because it includes more of the hibernating mammals we want to study, including brown bears, black bears, bats, and rodents.
 
 **Source:** [UCSC Hiller 470 Alignment](https://genome.ucsc.edu/cgi-bin/hgTrackUi?db=hg38&g=cons470way)
 
@@ -39,16 +39,6 @@ Before running RERconverge, we need the following inputs:
 - Format the gene trees as a tab-separated file with gene IDs and Newick trees.
 - Prepare the hibernation phenotype information.
 - Use these inputs to calculate relative evolutionary rates and test their association with hibernation.
-
-## 3. Work Completed So Far
-
-- Set up the GitHub repository and Hummingbird scratch storage.
-- Downloaded the Hiller 470 scientific-name and assembly-name phylogenetic trees.
-- Wrote a Python script to compare our 32 target species against Hiller.
-- Found 28 matches: 26 exact species-name matches and 2 subspecies matches.
-- Wrote a second script to match the scientific names with genome assembly IDs.
-- Identified duplicate assemblies for American black bear, little brown bat, and common pipistrelle.
-- Created a species metadata table to organize our candidate species.
 
 ## 4. Next Steps
 
