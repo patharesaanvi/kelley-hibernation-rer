@@ -1,33 +1,33 @@
-common_name	scientific_name	alignment_tip	assembly_accession	hiller_roster_preliminary	hibernation_status	foreground_decision	phenotype_source	comments
-American black bear	Ursus americanus			previously_reported_present_unverified	documented_hibernation	pending_review		bear winter dormancy
-Brown bear	Ursus arctos			previously_reported_present_unverified	documented_hibernation	pending_review		bear winter dormancy; Hiller may use grizzly subspecies
-Greater horseshoe bat	Rhinolophus ferrumequinum			previously_reported_present_unverified	documented_hibernation	pending_review		
-Brandt's bat	Myotis brandtii			previously_reported_present_unverified	documented_hibernation	pending_review		
-Thirteen-lined ground squirrel	Ictidomys tridecemlineatus			previously_reported_present_unverified	documented_hibernation	pending_review		duplicate in original list removed
-Arctic ground squirrel	Urocitellus parryii			previously_reported_present_unverified	documented_hibernation	pending_review		
-Syrian hamster	Mesocricetus auratus			previously_reported_present_unverified	documented_hibernation	pending_review		facultative hibernation
-Djungarian hamster	Phodopus sungorus			previously_reported_absent_unverified	daily_torpor	pending_review		not generally classified as prolonged hibernation
-Crossley's dwarf lemur	Cheirogaleus crossleyi			previously_reported_absent_unverified	documented_hibernation	pending_review		
-Sibree's dwarf lemur	Cheirogaleus sibreei			previously_reported_absent_unverified	documented_hibernation	pending_review		
-Little brown bat	Myotis lucifugus			previously_reported_present_unverified	documented_hibernation	pending_review		
-David's myotis	Myotis davidii			previously_reported_present_unverified	needs_verification	pending_review		species-specific hibernation evidence needed
-Natal long-fingered bat	Miniopterus natalensis			previously_reported_present_unverified	needs_verification	pending_review		species-specific hibernation evidence needed
-Alpine marmot	Marmota marmota			previously_reported_present_unverified	documented_hibernation	pending_review		
-Great roundleaf bat	Hipposideros armiger			previously_reported_present_unverified	needs_verification	pending_review		species-specific hibernation evidence needed
-Big brown bat	Eptesicus fuscus			previously_reported_present_unverified	documented_hibernation	pending_review		
-Gobi jerboa	Allactaga bullata			previously_reported_present_unverified	needs_verification	pending_review		species-specific hibernation evidence needed
-Fat-tailed dwarf lemur	Cheirogaleus medius			previously_reported_present_unverified	documented_hibernation	pending_review		
-Indochinese shrew	Crocidura indochinensis			previously_reported_absent_unverified	needs_verification	pending_review		species-specific hibernation evidence needed
-Northern mole vole	Ellobius talpinus			previously_reported_present_unverified	needs_verification	pending_review		not established as a hibernator
-Eastern red bat	Lasiurus borealis			previously_reported_present_unverified	conditional_torpor_or_hibernation	pending_review		overwintering strategy may vary
-Gray mouse lemur	Microcebus murinus			previously_reported_present_unverified	conditional_torpor_or_hibernation	pending_review		daily torpor and facultative multiday hibernation
-Common bent-wing bat	Miniopterus schreibersii			previously_reported_present_unverified	documented_hibernation	pending_review		
-Greater mouse-eared bat	Myotis myotis			previously_reported_present_unverified	documented_hibernation	pending_review		
-Common pipistrelle	Pipistrellus pipistrellus			previously_reported_present_unverified	documented_hibernation	pending_review		
-Chinese rufous horseshoe bat	Rhinolophus sinicus			previously_reported_present_unverified	needs_verification	pending_review		species-specific hibernation evidence needed
-Daurian ground squirrel	Spermophilus dauricus			previously_reported_present_unverified	needs_verification	pending_review		species-specific hibernation evidence needed
-Mexican free-tailed bat	Tadarida brasiliensis			previously_reported_present_unverified	conditional_torpor_or_hibernation	pending_review		population-specific overwintering
-Polar bear	Ursus maritimus			previously_reported_present_unverified	nonstandard_winter_denning	pending_review		pregnant females den; not typical generalized hibernation
-Meadow jumping mouse	Zapus hudsonius			previously_reported_present_unverified	documented_hibernation	pending_review		
-Yellow-bellied marmot	Marmota flaviventris			previously_reported_present_unverified	documented_hibernation	pending_review		
-Himalayan marmot	Marmota himalayana			previously_reported_present_unverified	documented_hibernation	pending_review		
+common_name	scientific_name	assembly_id	in_hiller	hibernation_status	phenotype_source	notes
+American black bear	Ursus americanus	Pending	Yes	Hibernation		Two assemblies: HLursAme1, HLursAme2
+Brown bear	Ursus arctos	HLursArc1	Yes	Hibernation		Grizzly bear subspecies
+Greater horseshoe bat	Rhinolophus ferrumequinum	Pending	Yes	Hibernation		
+Brandt's bat	Myotis brandtii	Pending	Yes	Hibernation		
+Thirteen-lined ground squirrel	Ictidomys tridecemlineatus	Pending	Yes	Hibernation		
+Arctic ground squirrel	Urocitellus parryii	Pending	Yes	Hibernation		
+Syrian hamster	Mesocricetus auratus	Pending	Yes	Hibernation		Facultative hibernation
+Djungarian hamster	Phodopus sungorus		No	Daily torpor		Not found in Hiller tree
+Crossley's dwarf lemur	Cheirogaleus crossleyi		No	Hibernation		Not found in Hiller tree
+Sibree's dwarf lemur	Cheirogaleus sibreei		No	Hibernation		Not found in Hiller tree
+Little brown bat	Myotis lucifugus	Pending	Yes	Hibernation		Two assemblies: myoLuc2, HLmyoLuc1
+David's myotis	Myotis davidii	Pending	Yes	Unverified		Species-specific evidence needed
+Natal long-fingered bat	Miniopterus natalensis	Pending	Yes	Unverified		Species-specific evidence needed
+Alpine marmot	Marmota marmota	HLmarMar1	Yes	Hibernation		Subspecies-level match
+Great roundleaf bat	Hipposideros armiger	Pending	Yes	Unverified		Species-specific evidence needed
+Big brown bat	Eptesicus fuscus	Pending	Yes	Hibernation		
+Gobi jerboa	Allactaga bullata	Pending	Yes	Unverified		Species-specific evidence needed
+Fat-tailed dwarf lemur	Cheirogaleus medius	Pending	Yes	Hibernation		Also called lesser dwarf lemur
+Indochinese shrew	Crocidura indochinensis		No	Unverified		Not found in Hiller tree
+Northern mole vole	Ellobius talpinus	Pending	Yes	Unverified		Hibernation not established
+Eastern red bat	Lasiurus borealis	Pending	Yes	Conditional		Overwintering behavior varies
+Gray mouse lemur	Microcebus murinus	Pending	Yes	Conditional		Daily torpor and facultative multiday hibernation
+Common bent-wing bat	Miniopterus schreibersii	Pending	Yes	Hibernation		
+Greater mouse-eared bat	Myotis myotis	Pending	Yes	Hibernation		
+Common pipistrelle	Pipistrellus pipistrellus	Pending	Yes	Hibernation		Two assemblies: HLpipPip1, HLpipPip2
+Chinese rufous horseshoe bat	Rhinolophus sinicus	Pending	Yes	Unverified		Species-specific evidence needed
+Daurian ground squirrel	Spermophilus dauricus	Pending	Yes	Unverified		Species-specific evidence needed
+Mexican free-tailed bat	Tadarida brasiliensis	Pending	Yes	Conditional		Population-specific overwintering
+Polar bear	Ursus maritimus	Pending	Yes	Nonstandard		Not a typical hibernator
+Meadow jumping mouse	Zapus hudsonius	Pending	Yes	Hibernation		
+Yellow-bellied marmot	Marmota flaviventris	Pending	Yes	Hibernation		
+Himalayan marmot	Marmota himalayana	Pending	Yes	Hibernation		
