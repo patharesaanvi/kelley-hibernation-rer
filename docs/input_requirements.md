@@ -62,8 +62,7 @@ Before running RERconverge, we need the following inputs:
 - Multiple genome assemblies from the same species should not automatically be treated as independent species.
 - Having more bat species could influence our results, so we need to consider phylogenetic bias.
 - Not every species in Hiller necessarily has usable sequence data for every gene.
-- Faster evolutionary rates do not automatically mean positive selection.
-- The hibernation status of each species needs to be supported by scientific evidence.
+- Faster evolutionary rates does not automatically mean positive selection.
 
 ## 6. Data Storage
 
