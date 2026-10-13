@@ -56,7 +56,6 @@ Before running RERconverge, we need the following inputs:
 2. Finalize the hibernating and non-hibernating species classifications.
 3. Determine how to format the gene-tree inputs for RERconverge.
 4. Extract a small set of orthologous gene alignments.
-5. Generate pilot gene trees and check that RERconverge can read them.
 
 ## 5. Important Considerations
 
