@@ -1,33 +1,35 @@
-common_name	scientific_name	assembly_id	in_hiller	hibernation_status	phenotype_source	notes
-American black bear	Ursus americanus	Pending	Yes	Hibernation		Two assemblies: HLursAme1, HLursAme2
-Brown bear	Ursus arctos	HLursArc1	Yes	Hibernation		Grizzly bear subspecies
-Greater horseshoe bat	Rhinolophus ferrumequinum	Pending	Yes	Hibernation		
-Brandt's bat	Myotis brandtii	Pending	Yes	Hibernation		
-Thirteen-lined ground squirrel	Ictidomys tridecemlineatus	Pending	Yes	Hibernation		
-Arctic ground squirrel	Urocitellus parryii	Pending	Yes	Hibernation		
-Syrian hamster	Mesocricetus auratus	Pending	Yes	Hibernation		Facultative hibernation
-Djungarian hamster	Phodopus sungorus		No	Daily torpor		Not found in Hiller tree
-Crossley's dwarf lemur	Cheirogaleus crossleyi		No	Hibernation		Not found in Hiller tree
-Sibree's dwarf lemur	Cheirogaleus sibreei		No	Hibernation		Not found in Hiller tree
-Little brown bat	Myotis lucifugus	Pending	Yes	Hibernation		Two assemblies: myoLuc2, HLmyoLuc1
-David's myotis	Myotis davidii	Pending	Yes	Unverified		Species-specific evidence needed
-Natal long-fingered bat	Miniopterus natalensis	Pending	Yes	Unverified		Species-specific evidence needed
-Alpine marmot	Marmota marmota	HLmarMar1	Yes	Hibernation		Subspecies-level match
-Great roundleaf bat	Hipposideros armiger	Pending	Yes	Unverified		Species-specific evidence needed
-Big brown bat	Eptesicus fuscus	Pending	Yes	Hibernation		
-Gobi jerboa	Allactaga bullata	Pending	Yes	Unverified		Species-specific evidence needed
-Fat-tailed dwarf lemur	Cheirogaleus medius	Pending	Yes	Hibernation		Also called lesser dwarf lemur
-Indochinese shrew	Crocidura indochinensis		No	Unverified		Not found in Hiller tree
-Northern mole vole	Ellobius talpinus	Pending	Yes	Unverified		Hibernation not established
-Eastern red bat	Lasiurus borealis	Pending	Yes	Conditional		Overwintering behavior varies
-Gray mouse lemur	Microcebus murinus	Pending	Yes	Conditional		Daily torpor and facultative multiday hibernation
-Common bent-wing bat	Miniopterus schreibersii	Pending	Yes	Hibernation		
-Greater mouse-eared bat	Myotis myotis	Pending	Yes	Hibernation		
-Common pipistrelle	Pipistrellus pipistrellus	Pending	Yes	Hibernation		Two assemblies: HLpipPip1, HLpipPip2
-Chinese rufous horseshoe bat	Rhinolophus sinicus	Pending	Yes	Unverified		Species-specific evidence needed
-Daurian ground squirrel	Spermophilus dauricus	Pending	Yes	Unverified		Species-specific evidence needed
-Mexican free-tailed bat	Tadarida brasiliensis	Pending	Yes	Conditional		Population-specific overwintering
-Polar bear	Ursus maritimus	Pending	Yes	Nonstandard		Not a typical hibernator
-Meadow jumping mouse	Zapus hudsonius	Pending	Yes	Hibernation		
-Yellow-bellied marmot	Marmota flaviventris	Pending	Yes	Hibernation		
-Himalayan marmot	Marmota himalayana	Pending	Yes	Hibernation		
+
+common_name	scientific_name	assembly_id	in_hiller	hibernation_status	notes
+American black bear	Ursus americanus	Pending	Yes	Hibernation	Two assemblies: HLursAme1, HLursAme2
+Brown bear	Ursus arctos	HLursArc1	Yes	Hibernation	Grizzly bear subspecies
+Greater horseshoe bat	Rhinolophus ferrumequinum	Pending	Yes	Hibernation	
+Brandt's bat	Myotis brandtii	Pending	Yes	Hibernation	
+Thirteen-lined ground squirrel	Ictidomys tridecemlineatus	Pending	Yes	Hibernation	
+Arctic ground squirrel	Urocitellus parryii	Pending	Yes	Hibernation	
+Syrian hamster	Mesocricetus auratus	Pending	Yes	Hibernation	Facultative hibernation
+Djungarian hamster	Phodopus sungorus		No	Daily torpor	Not found in Hiller tree
+Crossley's dwarf lemur	Cheirogaleus crossleyi		No	Hibernation	Not found in Hiller tree
+Sibree's dwarf lemur	Cheirogaleus sibreei		No	Hibernation	Not found in Hiller tree
+Little brown bat	Myotis lucifugus	Pending	Yes	Hibernation	Two assemblies: myoLuc2, HLmyoLuc1
+David's myotis	Myotis davidii	Pending	Yes	Unverified	Species-specific evidence needed
+Natal long-fingered bat	Miniopterus natalensis	Pending	Yes	Unverified	Species-specific evidence needed
+Alpine marmot	Marmota marmota	HLmarMar1	Yes	Hibernation	Subspecies-level match
+Great roundleaf bat	Hipposideros armiger	Pending	Yes	Unverified	Species-specific evidence needed
+Big brown bat	Eptesicus fuscus	Pending	Yes	Hibernation	
+Gobi jerboa	Allactaga bullata	Pending	Yes	Unverified	Species-specific evidence needed
+Fat-tailed dwarf lemur	Cheirogaleus medius	Pending	Yes	Hibernation	Also called lesser dwarf lemur
+Indochinese shrew	Crocidura indochinensis		No	Unverified	Not found in Hiller tree
+Northern mole vole	Ellobius talpinus	Pending	Yes	Unverified	Hibernation not established
+Eastern red bat	Lasiurus borealis	Pending	Yes	Conditional	Overwintering behavior varies
+Gray mouse lemur	Microcebus murinus	Pending	Yes	Conditional	Daily torpor and facultative multiday hibernation
+Common bent-wing bat	Miniopterus schreibersii	Pending	Yes	Hibernation	
+Greater mouse-eared bat	Myotis myotis	Pending	Yes	Hibernation	
+Common pipistrelle	Pipistrellus pipistrellus	Pending	Yes	Hibernation	Two assemblies: HLpipPip1, HLpipPip2
+Chinese rufous horseshoe bat	Rhinolophus sinicus	Pending	Yes	Unverified	Species-specific evidence needed
+Daurian ground squirrel	Spermophilus dauricus	Pending	Yes	Unverified	Species-specific evidence needed
+Mexican free-tailed bat	Tadarida brasiliensis	Pending	Yes	Conditional	Population-specific overwintering
+Polar bear	Ursus maritimus	Pending	Yes	Nonstandard	Not a typical hibernator
+Meadow jumping mouse	Zapus hudsonius	Pending	Yes	Hibernation	
+Yellow-bellied marmot	Marmota flaviventris	Pending	Yes	Hibernation	
+Himalayan marmot	Marmota himalayana	Pending	Yes	Hibernation	
+
