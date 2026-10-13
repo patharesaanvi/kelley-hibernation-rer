@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 """Match our target species to Hiller 470 genome assemblies."""
 
@@ -77,7 +76,7 @@ missing = []
 multiple = []
 
 for row in rows:
-    name = row["scientific_name"].replace(" ", "_")
+    name = row["scientific_name"].strip().replace(" ", "_")
 
     # Find exact species matches and subspecies matches
     matches = []
@@ -87,6 +86,9 @@ for row in rows:
             matches.extend(assemblies)
 
     matches = sorted(set(matches))
+
+    # Record whether this species is represented in Hiller
+    row["in_hiller"] = "Yes" if matches else "No"
 
     # Only fill missing IDs when there is one choice
     if len(matches) == 1:
@@ -99,6 +101,7 @@ for row in rows:
 
     else:
         missing.append(name)
+        row["assembly_id"] = ""
 
 # Save the updated species metadata
 with open(metadata_file, "w", newline="", encoding="utf-8") as f:
