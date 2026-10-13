@@ -1,3 +1,4 @@
+
 common_name	scientific_name	assembly_id	in_hiller	hibernation_status
 American black bear	Ursus americanus	Pending	Yes	Hibernation
 Brown bear	Ursus arctos	HLursArc1	Yes	Hibernation
@@ -17,7 +18,7 @@ Great roundleaf bat	Hipposideros armiger	HLhipArm1	Yes	hibernation
 Big brown bat	Eptesicus fuscus	eptFus1	Yes	Hibernation
 Gobi jerboa	Allactaga bullata	HLallBul1	Yes	Hibernation
 Fat-tailed dwarf lemur	Cheirogaleus medius	HLcheMed1	Yes	Hibernation
-Indochinese shrew	Crocidura indochinensis		No	Non-Hibernator
+Indochinese shrew	Crocidura indochinensis		No	Non
 Northern mole vole	Ellobius talpinus	HLellTal1	Yes	Unverified
 Eastern red bat	Lasiurus borealis	HLlasBor1	Yes	Conditional
 Gray mouse lemur	Microcebus murinus	micMur3	Yes	Conditional
@@ -31,3 +32,22 @@ Polar bear	Ursus maritimus	ursMar1	Yes	Nonstandard
 Meadow jumping mouse	Zapus hudsonius	HLzapHud1	Yes	Hibernation
 Yellow-bellied marmot	Marmota flaviventris	HLmarFla1	Yes	Hibernation
 Himalayan marmot	Marmota himalayana	HLmarHim1	Yes	Hibernation
+Domestic cat	Felis catus	Pending	To check	Non-hibernation
+Domestic dog	Canis lupus familiaris	Pending	To check	Non-hibernation
+Giant panda	Ailuropoda melanoleuca	Pending	To check	Non-hibernation
+Domestic cow	Bos taurus	Pending	To check	Non-hibernation
+Wild boar	Sus scrofa	Pending	To check	Non-hibernation
+Large flying fox	Pteropus vampyrus	Pending	To check	Non-hibernation
+Common vampire bat	Desmodus rotundus	Pending	To check	Non-hibernation
+European rabbit	Oryctolagus cuniculus	Pending	To check	Non-hibernation
+South African ground squirrel	Xerus inauris	Pending	To check	Non-hibernation
+Eastern gray squirrel	Sciurus carolinensis	Pending	To check	Non-hibernation
+Brown rat	Rattus norvegicus	Pending	To check	Non-hibernation
+Mouse	Mus musculus	Pending	To check	Non-hibernation
+Guinea pig	Cavia porcellus	Pending	To check	Non-hibernation
+Northern greater galago lemur	Otolemur garnettii	Pending	To check	Non-hibernation
+Ankarana sportive lemur	Lepilemur ankaranensis	Pending	To check	Non-hibernation
+Gorilla	Gorilla gorilla	Pending	To check	Non-hibernation
+Human	Homo sapiens	Pending	To check	Non-hibernation
+Chimpanzee	Pan troglodytes	Pending	To check	Non-hibernation
+Rhesus macaque	Macaca mulatta	Pending	To check	Non-hibernation
