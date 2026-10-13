@@ -31,22 +31,22 @@ Polar bear	Ursus maritimus	ursMar1	Yes	Nonstandard
 Meadow jumping mouse	Zapus hudsonius	HLzapHud1	Yes	Hibernation
 Yellow-bellied marmot	Marmota flaviventris	HLmarFla1	Yes	Hibernation
 Himalayan marmot	Marmota himalayana	HLmarHim1	Yes	Hibernation
-Domestic cat	Felis catus	Pending	To check	Non-hibernation
-Domestic dog	Canis lupus familiaris	Pending	To check	Non-hibernation
-Giant panda	Ailuropoda melanoleuca	Pending	To check	Non-hibernation
-Domestic cow	Bos taurus	Pending	To check	Non-hibernation
-Wild boar	Sus scrofa	Pending	To check	Non-hibernation
-Large flying fox	Pteropus vampyrus	Pending	To check	Non-hibernation
-Common vampire bat	Desmodus rotundus	Pending	To check	Non-hibernation
-European rabbit	Oryctolagus cuniculus	Pending	To check	Non-hibernation
-South African ground squirrel	Xerus inauris	Pending	To check	Non-hibernation
-Eastern gray squirrel	Sciurus carolinensis	Pending	To check	Non-hibernation
-Brown rat	Rattus norvegicus	Pending	To check	Non-hibernation
-Mouse	Mus musculus	Pending	To check	Non-hibernation
-Guinea pig	Cavia porcellus	Pending	To check	Non-hibernation
-Northern greater galago lemur	Otolemur garnettii	Pending	To check	Non-hibernation
-Ankarana sportive lemur	Lepilemur ankaranensis	Pending	To check	Non-hibernation
-Gorilla	Gorilla gorilla	Pending	To check	Non-hibernation
-Human	Homo sapiens	Pending	To check	Non-hibernation
-Chimpanzee	Pan troglodytes	Pending	To check	Non-hibernation
-Rhesus macaque	Macaca mulatta	Pending	To check	Non-hibernation
+Domestic cat	Felis catus	felCat9	Yes	Non-hibernation
+Domestic dog	Canis lupus familiaris	Pending	Yes	Non-hibernation
+Giant panda	Ailuropoda melanoleuca	HLailMel2	Yes	Non-hibernation
+Domestic cow	Bos taurus	bosTau9	Yes	Non-hibernation
+Wild boar	Sus scrofa	susScr11	Yes	Non-hibernation
+Large flying fox	Pteropus vampyrus	HLpteVam2	Yes	Non-hibernation
+Common vampire bat	Desmodus rotundus	HLdesRot2	Yes	Non-hibernation
+European rabbit	Oryctolagus cuniculus	Pending	Yes	Non-hibernation
+South African ground squirrel	Xerus inauris	HLxerIna1	Yes	Non-hibernation
+Eastern gray squirrel	Sciurus carolinensis	HLsciCar1	Yes	Non-hibernation
+Brown rat	Rattus norvegicus	Pending	Yes	Non-hibernation
+Mouse	Mus musculus	Pending	Yes	Non-hibernation
+Guinea pig	Cavia porcellus	cavPor3	Yes	Non-hibernation
+Northern greater galago lemur	Otolemur garnettii	otoGar3	Yes	Non-hibernation
+Ankarana sportive lemur	Lepilemur ankaranensis		No	Non-hibernation
+Gorilla	Gorilla gorilla	gorGor6	Yes	Non-hibernation
+Human	Homo sapiens	hg38	Yes	Non-hibernation
+Chimpanzee	Pan troglodytes	panTro6	Yes	Non-hibernation
+Rhesus macaque	Macaca mulatta	rheMac10	Yes	Non-hibernation
