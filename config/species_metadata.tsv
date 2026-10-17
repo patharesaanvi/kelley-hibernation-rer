@@ -51,3 +51,9 @@ Human	Homo sapiens	hg38	Yes	Non-hibernation	Other primates
 Chimpanzee	Pan troglodytes	panTro6	Yes	Non-hibernation	Other primates
 Rhesus macaque	Macaca mulatta	rheMac10	Yes	Non-hibernation	Other primates
 Egyptian rousette	Rousettus aegyptiacus	HLrouAeg4	Yes	Non-hibernation	Bats
+Western European hedgehog	Erinaceus europaeus	eriEur2	Yes	Hibernation	Other mammals
+Hazel dormouse	Muscardinus avellanarius	HLmusAve1	Yes	Hibernation	Other rodents
+Fat dormouse	Glis glis	HLgliGli1	Yes	Hibernation	Other rodents
+Woodchuck	Marmota monax	HLmarMon1	Yes	Hibernation	Squirrels and marmots
+Asian black bear	Ursus thibetanus thibetanus	HLursThi1	Yes	Hibernation	Bears
+Northern long-eared bat	Myotis septentrionalis	Pending	Yes	Hibernation	Bats
