@@ -60,6 +60,11 @@ def get_group(name):
 counts = Counter()
 
 for row in species:
+
+    # Only include species available in Hiller 470
+    if row["in_hiller"].strip().lower() != "yes":
+        continue
+
     name = row["scientific_name"].strip()
     status = row["hibernation_status"].strip().lower()
 
@@ -96,7 +101,10 @@ with open(output, "w", newline="") as file:
         values = [counts[(group, category)] for category in categories]
         writer.writerow([group] + values + [sum(values)])
 
-print("Total species:", len(species))
+print("Total species:", len(species))print("Total species in Hiller:", sum(
+    row["in_hiller"].strip().lower() == "yes"
+    for row in species
+))
 print("Foreground candidates:", sum(
     counts[(g, "Foreground candidate")] for g in groups
 ))
