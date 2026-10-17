@@ -23,7 +23,7 @@ Eastern red bat	Lasiurus borealis	HLlasBor1	Yes	Conditional	Bats
 Gray mouse lemur	Microcebus murinus	micMur3	Yes	Conditional	Lemurs
 Common bent-wing bat	Miniopterus schreibersii	HLminSch1	Yes	Hibernation	Bats
 Greater mouse-eared bat	Myotis myotis	HLmyoMyo6	Yes	Hibernation	Bats
-Common pipistrelle	Pipistrellus pipistrellus	Pending	Yes	Hibernation	Bats
+Common pipistrelle	Pipistrellus pipistrellus	HLpipPip2	Yes	Hibernation	Bats
 Chinese rufous horseshoe bat	Rhinolophus sinicus	HLrhiSin1	Yes	Hibernation	Bats
 Daurian ground squirrel	Spermophilus dauricus	HLspeDau1	Yes	Hibernation	Squirrels and marmots
 Mexican free-tailed bat	Tadarida brasiliensis	HLtadBra1	Yes	Conditional	Bats
@@ -32,17 +32,17 @@ Meadow jumping mouse	Zapus hudsonius	HLzapHud1	Yes	Hibernation	Other rodents
 Yellow-bellied marmot	Marmota flaviventris	HLmarFla1	Yes	Hibernation	Squirrels and marmots
 Himalayan marmot	Marmota himalayana	HLmarHim1	Yes	Hibernation	Squirrels and marmots
 Domestic cat	Felis catus	felCat9	Yes	Non-hibernation	Other mammals
-Domestic dog	Canis lupus familiaris	Pending	Yes	Non-hibernation	Other mammals
+Domestic dog	Canis lupus familiaris	canFam4	Yes	Non-hibernation	Other mammals
 Giant panda	Ailuropoda melanoleuca	HLailMel2	Yes	Non-hibernation	Bears
 Domestic cow	Bos taurus	bosTau9	Yes	Non-hibernation	Other mammals
 Wild boar	Sus scrofa	susScr11	Yes	Non-hibernation	Other mammals
 Large flying fox	Pteropus vampyrus	HLpteVam2	Yes	Non-hibernation	Bats
 Common vampire bat	Desmodus rotundus	HLdesRot2	Yes	Non-hibernation	Bats
-European rabbit	Oryctolagus cuniculus	Pending	Yes	Non-hibernation	Other mammals
+European rabbit	Oryctolagus cuniculus	HLoryCunCun4	Yes	Non-hibernation	Other mammals
 South African ground squirrel	Xerus inauris	HLxerIna1	Yes	Non-hibernation	Squirrels and marmots
 Eastern gray squirrel	Sciurus carolinensis	HLsciCar1	Yes	Non-hibernation	Squirrels and marmots
-Brown rat	Rattus norvegicus	Pending	Yes	Non-hibernation	Other rodents
-Mouse	Mus musculus	Pending	Yes	Non-hibernation	Other rodents
+Brown rat	Rattus norvegicus	HLratNor7	Yes	Non-hibernation	Other rodents
+Mouse	Mus musculus	mm39	Yes	Non-hibernation	Other rodents
 Guinea pig	Cavia porcellus	cavPor3	Yes	Non-hibernation	Other rodents
 Northern greater galago lemur	Otolemur garnettii	otoGar3	Yes	Non-hibernation	Other primates
 Ankarana sportive lemur	Lepilemur ankaranensis		No	Non-hibernation	Lemurs
