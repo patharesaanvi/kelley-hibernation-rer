@@ -101,7 +101,7 @@ with open(output, "w", newline="") as file:
         values = [counts[(group, category)] for category in categories]
         writer.writerow([group] + values + [sum(values)])
 
-print("Total species:", len(species))print("Total species in Hiller:", sum(
+print("Total species in Hiller:", sum(
     row["in_hiller"].strip().lower() == "yes"
     for row in species
 ))
