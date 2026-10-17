@@ -1,5 +1,5 @@
 common_name	scientific_name	assembly_id	in_hiller	hibernation_status	mammal_group
-American black bear	Ursus americanus	Pending	Yes	Hibernation	Bears
+American black bear	Ursus americanus	HLursAme2	Yes	Hibernation	Bears
 Brown bear	Ursus arctos	HLursArc1	Yes	Hibernation	Bears
 Greater horseshoe bat	Rhinolophus ferrumequinum	HLrhiFer5	Yes	Hibernation	Bats
 Brandt's bat	Myotis brandtii	myoBra1	Yes	Hibernation	Bats
