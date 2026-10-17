@@ -31,3 +31,5 @@ __pycache__/
 # Environment folders
 .venv/
 .env/
+
+!results/species_summary.tsv
