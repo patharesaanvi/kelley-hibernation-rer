@@ -14,7 +14,8 @@
 *.nwk
 *.nh
 *.tre
-results/
+results/*
+!results/species_summary.tsv
 outputs/
 figures/
 logs/
@@ -31,5 +32,3 @@ __pycache__/
 # Environment folders
 .venv/
 .env/
-
-!results/species_summary.tsv
