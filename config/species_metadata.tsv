@@ -1,52 +1,52 @@
-common_name	scientific_name	assembly_id	in_hiller	hibernation_status
-American black bear	Ursus americanus	Pending	Yes	Hibernation
-Brown bear	Ursus arctos	HLursArc1	Yes	Hibernation
-Greater horseshoe bat	Rhinolophus ferrumequinum	HLrhiFer5	Yes	Hibernation
-Brandt's bat	Myotis brandtii	myoBra1	Yes	Hibernation
-Thirteen-lined ground squirrel	Ictidomys tridecemlineatus	speTri2	Yes	Hibernation
-Arctic ground squirrel	Urocitellus parryii	HLuroPar1	Yes	Hibernation
-Syrian hamster	Mesocricetus auratus	mesAur1	Yes	Hibernation
-Djungarian hamster	Phodopus sungorus		No	Hibernation
-Crossley's dwarf lemur	Cheirogaleus crossleyi		No	Hibernation
-Sibree's dwarf lemur	Cheirogaleus sibreei		No	Hibernation
-Little brown bat	Myotis lucifugus	Pending	Yes	Hibernation
-David's myotis	Myotis davidii	myoDav1	Yes	Hibernation
-Natal long-fingered bat	Miniopterus natalensis	HLminNat1	Yes	Hibernation
-Alpine marmot	Marmota marmota	HLmarMar1	Yes	Hibernation
-Great roundleaf bat	Hipposideros armiger	HLhipArm1	Yes	hibernation
-Big brown bat	Eptesicus fuscus	eptFus1	Yes	Hibernation
-Gobi jerboa	Allactaga bullata	HLallBul1	Yes	Hibernation
-Fat-tailed dwarf lemur	Cheirogaleus medius	HLcheMed1	Yes	Hibernation
-Indochinese shrew	Crocidura indochinensis		No	Non-Hibernation
-Northern mole vole	Ellobius talpinus	HLellTal1	Yes	Unverified
-Eastern red bat	Lasiurus borealis	HLlasBor1	Yes	Conditional
-Gray mouse lemur	Microcebus murinus	micMur3	Yes	Conditional
-Common bent-wing bat	Miniopterus schreibersii	HLminSch1	Yes	Hibernation
-Greater mouse-eared bat	Myotis myotis	HLmyoMyo6	Yes	Hibernation
-Common pipistrelle	Pipistrellus pipistrellus	Pending	Yes	Hibernation
-Chinese rufous horseshoe bat	Rhinolophus sinicus	HLrhiSin1	Yes	Hibernation
-Daurian ground squirrel	Spermophilus dauricus	HLspeDau1	Yes	Hibernation
-Mexican free-tailed bat	Tadarida brasiliensis	HLtadBra1	Yes	Conditional
-Polar bear	Ursus maritimus	ursMar1	Yes	Nonstandard
-Meadow jumping mouse	Zapus hudsonius	HLzapHud1	Yes	Hibernation
-Yellow-bellied marmot	Marmota flaviventris	HLmarFla1	Yes	Hibernation
-Himalayan marmot	Marmota himalayana	HLmarHim1	Yes	Hibernation
-Domestic cat	Felis catus	felCat9	Yes	Non-hibernation
-Domestic dog	Canis lupus familiaris	Pending	Yes	Non-hibernation
-Giant panda	Ailuropoda melanoleuca	HLailMel2	Yes	Non-hibernation
-Domestic cow	Bos taurus	bosTau9	Yes	Non-hibernation
-Wild boar	Sus scrofa	susScr11	Yes	Non-hibernation
-Large flying fox	Pteropus vampyrus	HLpteVam2	Yes	Non-hibernation
-Common vampire bat	Desmodus rotundus	HLdesRot2	Yes	Non-hibernation
-European rabbit	Oryctolagus cuniculus	Pending	Yes	Non-hibernation
-South African ground squirrel	Xerus inauris	HLxerIna1	Yes	Non-hibernation
-Eastern gray squirrel	Sciurus carolinensis	HLsciCar1	Yes	Non-hibernation
-Brown rat	Rattus norvegicus	Pending	Yes	Non-hibernation
-Mouse	Mus musculus	Pending	Yes	Non-hibernation
-Guinea pig	Cavia porcellus	cavPor3	Yes	Non-hibernation
-Northern greater galago lemur	Otolemur garnettii	otoGar3	Yes	Non-hibernation
-Ankarana sportive lemur	Lepilemur ankaranensis		No	Non-hibernation
-Gorilla	Gorilla gorilla	gorGor6	Yes	Non-hibernation
-Human	Homo sapiens	hg38	Yes	Non-hibernation
-Chimpanzee	Pan troglodytes	panTro6	Yes	Non-hibernation
-Rhesus macaque	Macaca mulatta	rheMac10	Yes	Non-hibernation
+common_name	scientific_name	assembly_id	in_hiller	hibernation_status	mammal_group
+American black bear	Ursus americanus	Pending	Yes	Hibernation	Bears
+Brown bear	Ursus arctos	HLursArc1	Yes	Hibernation	Bears
+Greater horseshoe bat	Rhinolophus ferrumequinum	HLrhiFer5	Yes	Hibernation	Bats
+Brandt's bat	Myotis brandtii	myoBra1	Yes	Hibernation	Bats
+Thirteen-lined ground squirrel	Ictidomys tridecemlineatus	speTri2	Yes	Hibernation	Squirrels and marmots
+Arctic ground squirrel	Urocitellus parryii	HLuroPar1	Yes	Hibernation	Squirrels and marmots
+Syrian hamster	Mesocricetus auratus	mesAur1	Yes	Hibernation	Other rodents
+Djungarian hamster	Phodopus sungorus		No	Hibernation	Other rodents
+Crossley's dwarf lemur	Cheirogaleus crossleyi		No	Hibernation	Lemurs
+Sibree's dwarf lemur	Cheirogaleus sibreei		No	Hibernation	Lemurs
+Little brown bat	Myotis lucifugus	Pending	Yes	Hibernation	Bats
+David's myotis	Myotis davidii	myoDav1	Yes	Hibernation	Bats
+Natal long-fingered bat	Miniopterus natalensis	HLminNat1	Yes	Hibernation	Bats
+Alpine marmot	Marmota marmota	HLmarMar1	Yes	Hibernation	Squirrels and marmots
+Great roundleaf bat	Hipposideros armiger	HLhipArm1	Yes	hibernation	Bats
+Big brown bat	Eptesicus fuscus	eptFus1	Yes	Hibernation	Bats
+Gobi jerboa	Allactaga bullata	HLallBul1	Yes	Hibernation	Other rodents
+Fat-tailed dwarf lemur	Cheirogaleus medius	HLcheMed1	Yes	Hibernation	Lemurs
+Indochinese shrew	Crocidura indochinensis		No	Non-Hibernation	Other mammals
+Northern mole vole	Ellobius talpinus	HLellTal1	Yes	Unverified	Other rodents
+Eastern red bat	Lasiurus borealis	HLlasBor1	Yes	Conditional	Bats
+Gray mouse lemur	Microcebus murinus	micMur3	Yes	Conditional	Lemurs
+Common bent-wing bat	Miniopterus schreibersii	HLminSch1	Yes	Hibernation	Bats
+Greater mouse-eared bat	Myotis myotis	HLmyoMyo6	Yes	Hibernation	Bats
+Common pipistrelle	Pipistrellus pipistrellus	Pending	Yes	Hibernation	Bats
+Chinese rufous horseshoe bat	Rhinolophus sinicus	HLrhiSin1	Yes	Hibernation	Bats
+Daurian ground squirrel	Spermophilus dauricus	HLspeDau1	Yes	Hibernation	Squirrels and marmots
+Mexican free-tailed bat	Tadarida brasiliensis	HLtadBra1	Yes	Conditional	Bats
+Polar bear	Ursus maritimus	ursMar1	Yes	Nonstandard	Bears
+Meadow jumping mouse	Zapus hudsonius	HLzapHud1	Yes	Hibernation	Other rodents
+Yellow-bellied marmot	Marmota flaviventris	HLmarFla1	Yes	Hibernation	Squirrels and marmots
+Himalayan marmot	Marmota himalayana	HLmarHim1	Yes	Hibernation	Squirrels and marmots
+Domestic cat	Felis catus	felCat9	Yes	Non-hibernation	Other mammals
+Domestic dog	Canis lupus familiaris	Pending	Yes	Non-hibernation	Other mammals
+Giant panda	Ailuropoda melanoleuca	HLailMel2	Yes	Non-hibernation	Bears
+Domestic cow	Bos taurus	bosTau9	Yes	Non-hibernation	Other mammals
+Wild boar	Sus scrofa	susScr11	Yes	Non-hibernation	Other mammals
+Large flying fox	Pteropus vampyrus	HLpteVam2	Yes	Non-hibernation	Bats
+Common vampire bat	Desmodus rotundus	HLdesRot2	Yes	Non-hibernation	Bats
+European rabbit	Oryctolagus cuniculus	Pending	Yes	Non-hibernation	Other mammals
+South African ground squirrel	Xerus inauris	HLxerIna1	Yes	Non-hibernation	Squirrels and marmots
+Eastern gray squirrel	Sciurus carolinensis	HLsciCar1	Yes	Non-hibernation	Squirrels and marmots
+Brown rat	Rattus norvegicus	Pending	Yes	Non-hibernation	Other rodents
+Mouse	Mus musculus	Pending	Yes	Non-hibernation	Other rodents
+Guinea pig	Cavia porcellus	cavPor3	Yes	Non-hibernation	Other rodents
+Northern greater galago lemur	Otolemur garnettii	otoGar3	Yes	Non-hibernation	Other primates
+Ankarana sportive lemur	Lepilemur ankaranensis		No	Non-hibernation	Lemurs
+Gorilla	Gorilla gorilla	gorGor6	Yes	Non-hibernation	Other primates
+Human	Homo sapiens	hg38	Yes	Non-hibernation	Other primates
+Chimpanzee	Pan troglodytes	panTro6	Yes	Non-hibernation	Other primates
+Rhesus macaque	Macaca mulatta	rheMac10	Yes	Non-hibernation	Other primates
