@@ -7,55 +7,9 @@ import os
 from collections import Counter
 from pathlib import Path
 
-# Read our 51-species metadata table
+# Read the current species metadata table
 with open("config/species_metadata.tsv", newline="") as file:
     species = list(csv.DictReader(file, delimiter="\t"))
-
-# The 20 proposed background species from our project list
-background = {
-    "Felis catus", "Canis lupus familiaris",
-    "Ailuropoda melanoleuca", "Ursus maritimus",
-    "Bos taurus", "Sus scrofa",
-    "Pteropus vampyrus", "Desmodus rotundus",
-    "Oryctolagus cuniculus", "Xerus inauris",
-    "Sciurus carolinensis", "Rattus norvegicus",
-    "Mus musculus", "Cavia porcellus",
-    "Otolemur garnettii", "Lepilemur ankaranensis",
-    "Gorilla gorilla", "Homo sapiens",
-    "Pan troglodytes", "Macaca mulatta"
-}
-
-bats = {
-    "Rhinolophus", "Myotis", "Miniopterus",
-    "Hipposideros", "Eptesicus", "Lasiurus",
-    "Pipistrellus", "Tadarida", "Pteropus", "Desmodus"
-}
-squirrels = {"Ictidomys", "Urocitellus", "Spermophilus",
-             "Xerus", "Sciurus"}
-lemurs = {"Cheirogaleus", "Microcebus", "Lepilemur"}
-primates = {"Otolemur", "Gorilla", "Homo", "Pan", "Macaca"}
-rodents = {"Mesocricetus", "Phodopus", "Marmota",
-           "Allactaga", "Ellobius", "Zapus",
-           "Rattus", "Mus", "Cavia"}
-
-# Group each species by mammalian category
-def get_group(name):
-    genus = name.split()[0]
-
-    if genus in bats:
-        return "Bats"
-    if genus in squirrels or genus == "Marmota":
-        return "Squirrels and marmots"
-    if genus == "Ursus" or genus == "Ailuropoda":
-        return "Bears"
-    if genus in lemurs:
-        return "Lemurs"
-    if genus in primates:
-        return "Other primates"
-    if genus in rodents:
-        return "Other rodents"
-    return "Other mammals"
-
 
 counts = Counter()
 
@@ -68,15 +22,16 @@ for row in species:
     name = row["scientific_name"].strip()
     status = row["hibernation_status"].strip().lower()
 
-    # Separate proposed background species from foreground candidates
-    if name in background:
-        category = "Background"
-    elif status == "hibernation":
+    # Classify from the reviewed phenotype field, not a fixed name list
+    if status == "hibernation":
         category = "Foreground candidate"
+    elif status == "non-hibernation":
+        category = "Background"
     else:
         category = "Uncertain"
 
-    group = get_group(name)
+    # Use the explicitly assigned group in species_metadata.tsv
+    group = row["mammal_group"].strip()
     counts[(group, category)] += 1
 
 # Save the summary in scratch
