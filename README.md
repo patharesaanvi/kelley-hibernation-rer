@@ -22,6 +22,7 @@ Identify genes exhibiting accelerated or decelerated evolutionary rates in hiber
 - scripts/ — Analysis and validation scripts
 - notebooks/ — Markdown lab notebook documenting research progress
 - docs/ — Additional documentation
+- results/ — Analysis outputs, processed data, figures, and evolutionary rate analysis results
 
 ## Data Storage
 
