@@ -36,7 +36,7 @@ I used HBB as a test gene to figure out how to go from the Hiller alignment to a
 | What I did | Output saved on Hummingbird |
 | --- | --- |
 | Extracted the three HBB coding regions from Hiller using `bigBedToBed` | `gene_alignments/HBB_5225597_5225726.maf`, `HBB_5226576_5226799.maf`, `HBB_5226929_5227021.maf` |
-| Used `build_hbb_alignment.py` to put together the HBB sequences | `gene_alignments/HBB_53species_CDS.fasta` |
+| Used [`scripts/build_hbb_alignment.py`](../scripts/build_hbb_alignment.py) to put together the HBB sequences | `gene_alignments/HBB_53species_CDS.fasta` |
 | Filtered out sequences with missing bases | `gene_alignments/HBB_complete_CDS.fasta` |
 | Pruned the Hiller tree to match the 46 sequences | `gene_trees/HBB_pruned_topology.nwk` |
 | Used RAxML-NG to estimate HBB branch lengths | `gene_trees/HBB_test.raxml.bestTree` (also `HBB_test.raxml.log` and `HBB_test.raxml.bestModel`) |
@@ -44,11 +44,11 @@ I used HBB as a test gene to figure out how to go from the Hiller alignment to a
 
 All the HBB paths in this table start with `/scratch/spathare/hibernation_rer/`.
 
-I made `scripts/build_hbb_alignment.py` on Hummingbird, but **I still need to upload it to GitHub**. The filtering, tree-pruning, and final formatting steps were commands I ran in the terminal, not separate GitHub scripts yet.
+I uploaded [`scripts/build_hbb_alignment.py`](../scripts/build_hbb_alignment.py) to GitHub, so the code I used to put together the HBB alignment is saved with the project. The filtering, tree-pruning, and final formatting steps were commands I ran in the terminal, so I haven't saved them as separate scripts yet.
 
 ## What I still need to do
 
 - Check that the HBB sequences are correctly aligned and that they represent the same gene across species.
 - Test whether RERconverge can read the gene-tree file.
 - Ask Avrami if RAxML-NG is the method we should use for branch lengths.
-- Put the HBB steps into reusable scripts, then test the process on more genes.
+- Save the remaining HBB filtering, tree-pruning, and formatting steps as reusable scripts, then test the process on more genes.
