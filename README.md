@@ -11,9 +11,9 @@ Identify genes exhibiting accelerated or decelerated evolutionary rates in hiber
 1. Obtain the Hiller 470-mammal genome alignment.
 2. Identify target hibernating species and suitable non-hibernating comparison species.
 3. Extract orthologous gene alignments.
-4. Generate gene-specific phylogenetic trees and estimate branch lengths.
+4. Generate gene specific phylogenetic trees and estimate branch lengths.
 5. Run RERconverge to identify evolutionary rate shifts associated with hibernation.
-6. Perform statistical analysis, multiple-testing correction, and functional enrichment.
+6. Perform statistical analysis, multiple testing correction, and functional enrichment.
 7. Compare evolutionary findings with differential gene expression results.
 
 ## Repository Structure
