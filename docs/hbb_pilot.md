@@ -188,7 +188,6 @@ Everything here is on Hummingbird in `/scratch/spathare/hibernation_rer/`, excep
 - **Orthology:** HBB is part of a gene family with related globins; an aligned region isn't automatically the correct ortholog.
 - **Alignment quality:** Review gaps, insertions, coding frame, and whether reference-guided reconstruction is appropriate.
 - **Missing data:** Choose a sensible gene-level threshold instead of requiring 100% completeness by default.
-- **Tree estimation:** Confirm the final branch-length method with Avrami and investigate near-zero branches.
 - **RERconverge:** Test `readTrees()` with the one-gene input, then pilot a small multi-gene dataset.
 - **Automation:** Filtering, tree pruning, and final TSV formatting were run as one-off terminal commands and have not yet been saved as reusable GitHub scripts.
 
