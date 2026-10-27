@@ -68,7 +68,7 @@ For the detailed explanation, genomic coordinates, run command, and quality conc
 
 The alignment is a preliminary **human-reference-guided** extraction. It doesn't preserve species-specific insertions, and I haven't verified that every aligned sequence is a true HBB ortholog. The final missing-data rule and method for estimating branch lengths also need to be decided.
 
-### October 27, 2026 — RERconverge HBB input test
+### RERconverge HBB input test
 
 **Progress made**
 - Loaded R and RERconverge on Hummingbird and confirmed the package worked. The RERconverge environment ran R 4.2.3.
