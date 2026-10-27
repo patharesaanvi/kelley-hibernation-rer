@@ -1,7 +1,5 @@
 # Lab notebook — Project setup and October 2026 progress
 
-These are my notes as I learn how to prepare genomic data for our Kelley Lab hibernation project. For a beginner-friendly overview, start with the [project README](../README.md). For a full explanation of the HBB test, see [HBB pilot: step by step](../docs/hbb_pilot.md).
-
 ## Research question
 
 Which protein-coding genes evolve faster or slower in hibernating mammals than in non-hibernating mammals? Do any rate shifts appear independently in different hibernating groups (bats, rodents, bears, lemurs)? Eventually, can we compare these findings with RNA-seq differential-expression results?
