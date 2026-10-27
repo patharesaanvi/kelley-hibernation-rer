@@ -22,7 +22,7 @@ Identify genes with accelerated or decelerated evolutionary rates in hibernating
 - Developed scripts to check species availability, genome assembly IDs, and hibernation classifications.
 - Used **HBB** as a test gene to extract a 53-species alignment from Hiller.
 - Filtered the HBB alignment to **46 complete sequences**, pruned the Hiller species tree, and used **RAxML-NG** to estimate gene-specific branch lengths.
-- Formatted the HBB gene tree for RERconverge. **The input has not yet been tested in RERconverge**, and the pilot alignment still needs validation.
+- Successfully tested the HBB tree with RERconverge's `readTrees()` function. All 46 species were imported, and the branch-length range matched the original RAxML-NG output. Alignment quality and orthology still need validation.
 
 ## Repository Structure
 
