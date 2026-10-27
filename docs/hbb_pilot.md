@@ -62,7 +62,7 @@ In more detail, it:
 
 The result had **53 FASTA sequences of 444 bases each**.
 
-**Limitations:** The script reconstructs aligned *human reference positions* and does not preserve insertions from other species relative to hg38. It does not independently confirm that every aligned sequence is the true HBB ortholog. These issues must be checked before a biological analysis.
+**Limitations:** For this test, I used the human HBB reference positions to extract sequences from other mammals, so the alignment might miss extra nucleotides present in other species. I also still need to confirm that the sequences I extracted are the correct HBB orthologs across all species. These are things I need to check before using the alignment for the actual evolutionary analysis.
 
 ## Step 3 — Perform basic checks and filter for the pilot
 
