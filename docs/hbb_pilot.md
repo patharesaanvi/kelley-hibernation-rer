@@ -148,7 +148,7 @@ Outputs include:
 The log reported:
 - Final log-likelihood **−5033.417582**. --> measures how well the fitted model explains our observed sequence data. A higher log likelihood (less-negative) generally indicates a better fit. 
 - **46** tree tips, matching the FASTA.
-- Minimum reported branch length **0.000001**; maximum **0.247934**.
+- Minimum reported branch length **0.000001** (almost no evolutionary sequence change along that particular branch of the HBB tree); maximum **0.247934**.
 - **7 near-zero branches**. These may reflect limited HBB sequence variation and should be reviewed.
 
 **Why RAxML-NG?** It was a convenient way to test an upstream branch-length estimation step. **It does not replace RERconverge** and is not named in the grant as a required method. Its use for the final multi-gene pipeline needs approval from Avrami.
