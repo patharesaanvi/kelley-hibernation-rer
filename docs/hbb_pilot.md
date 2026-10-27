@@ -167,7 +167,68 @@ This is an illustration; the actual file contains the 46-tip HBB tree and real e
 
 We confirmed that the file has **one line** and the gene identifier is **`HBB`**.
 
-**Not done:** Testing `readTrees()` in RERconverge. One gene alone is not enough for a reliable genome-wide relative-rate analysis.
+**Import test completed:** RERconverge successfully loaded the one-gene HBB tree. This does not establish reliable genome-wide relative-rate estimates.
+
+## Step 7 — Test the HBB gene tree in RERconverge
+
+After formatting the HBB gene tree, I tested whether RERconverge could successfully read it using the `readTrees()` function.
+
+### Setting up RERconverge
+
+I first checked which R and RERconverge modules were available on Hummingbird. Both were already installed, so I loaded them using:
+
+```bash
+module load ohpc
+module load r/4.4.1
+module load rerconverge/0.3.0
+```
+
+I confirmed that RERconverge loaded successfully. The RERconverge environment used R version 4.2.3.
+
+### Testing readTrees()
+
+I used the HBB gene-tree TSV containing one gene record and the Hiller species tree previously pruned to 46 mammals.
+
+```r
+library(RERconverge)
+library(ape)
+
+scratch <- "/scratch/spathare/hibernation_rer"
+
+master <- read.tree(
+  paste0(scratch, "/gene_trees/HBB_pruned_topology.nwk")
+)
+
+result <- readTrees(
+  paste0(scratch, "/gene_trees/hiller_hibernation_gene_trees.tsv"),
+  max.read = 1,
+  masterTree = master,
+  minSpecs = 46
+)
+```
+
+I supplied the pruned Hiller topology as the master tree because I only had one gene tree for this pilot.
+
+### Results
+
+RERconverge successfully imported the HBB gene tree and returned a `treesObj`.
+
+- Gene trees imported: 1 (HBB)
+- Species in the original RAxML-NG tree: 46
+- Species in the imported gene tree: 46
+- Branches in the original RAxML-NG tree: 89
+- Original branch-length range: 0.000001–0.247934
+- Imported branch-length range: 0.000001–0.247934
+
+The matching branch-length ranges show that the minimum and maximum estimates were retained. A branch-by-branch comparison has not yet been performed.
+
+RERconverge also returned a master tree with branch lengths ranging from 0.00179 to 0.30981. However, it printed a message indicating that the supplied master tree originally lacked branch lengths. These returned master-tree estimates need further review because our pilot contains only one gene.
+
+### What this tells us
+
+This test confirmed that our gene-tree TSV format is compatible with RERconverge and that the 46-species HBB tree can be imported.
+
+However, this does not mean we have completed the evolutionary-rate analysis. RERconverge requires a broader collection of gene trees to estimate genome-wide relative evolutionary-rate patterns.
 
 ## File locations
 
@@ -188,11 +249,11 @@ Everything here is on Hummingbird in `/scratch/spathare/hibernation_rer/`, excep
 - **Orthology:** HBB is part of a gene family with related globins; an aligned region isn't automatically the correct ortholog.
 - **Alignment quality:** Review gaps, insertions, coding frame, and whether reference-guided reconstruction is appropriate.
 - **Missing data:** Choose a sensible gene-level threshold instead of requiring 100% completeness by default.
-- **RERconverge:** Test `readTrees()` with the one-gene input, then pilot a small multi-gene dataset.
+- **RERconverge:** Basic `readTrees()` import succeeded. Validate the returned master-tree handling and compare individual branches, then pilot a small multi-gene dataset.
 - **Automation:** Filtering, tree pruning, and final TSV formatting were run as one-off terminal commands and have not yet been saved as reusable GitHub scripts.
 
 ## What the test showed
 
-**We figured out how to prepare a preliminary gene-tree input from Hiller using one gene.** We have not established that HBB experienced a hibernation-related rate shift, and the pilot needs further validation before scaling up.
+**We prepared a preliminary gene-tree input from Hiller using one gene and successfully imported it with `readTrees()`.** We have not established that HBB experienced a hibernation-related rate shift, and the pilot needs further validation before scaling up.
 
 [Back to project overview](../README.md)
