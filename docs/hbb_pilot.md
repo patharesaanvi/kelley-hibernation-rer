@@ -169,7 +169,7 @@ We confirmed that the file has **one line** and the gene identifier is **`HBB`**
 
 **Not done:** Testing `readTrees()` in RERconverge. One gene alone is not enough for a reliable genome-wide relative-rate analysis.
 
-## File locations at a glance
+## File locations
 
 Everything here is on Hummingbird in `/scratch/spathare/hibernation_rer/`, except the linked Python script saved in GitHub.
 
