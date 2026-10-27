@@ -153,7 +153,7 @@ The log reported:
 
 ## Step 6 — Format the tree for RERconverge
 
-We created a tab-delimited file with **one gene name followed by one Newick tree on the same line**.
+I created a tab-delimited file with **one gene name followed by one Newick tree on the same line**.
 
 The basic layout is:
 
