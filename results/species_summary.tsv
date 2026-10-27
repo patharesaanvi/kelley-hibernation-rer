@@ -1,8 +1,8 @@
-mammal_group	Foreground (Hibernating Species)	Background (Non-Hibernating Species)	Uncertain	total
-Bats	12	3	2	17
-Squirrels and marmots	7	2	0	9
-Bears	3	1	1	5
-Lemurs	1	0	1	2
-Other primates	0	5	0	5
-Other rodents	5	3	1	9
-Other mammals	1	5	0	6
+mammal_group	Foreground candidate	Background	Uncertain	total
+Artiodactyla	0	2	0	2
+Carnivora	3	3	1	7
+Chiroptera	12	3	2	17
+Eulipotyphla	1	0	0	1
+Lagomorpha	0	1	0	1
+Primates	1	5	1	7
+Rodentia	12	5	1	18
