@@ -151,8 +151,6 @@ The log reported:
 - Minimum reported branch length **0.000001** (almost no evolutionary sequence change along that particular branch of the HBB tree); maximum **0.247934**.
 - **7 near-zero branches**. These may reflect limited HBB sequence variation and should be reviewed.
 
-**Why RAxML-NG?** It was a convenient way to test an upstream branch-length estimation step. **It does not replace RERconverge** and is not named in the grant as a required method. Its use for the final multi-gene pipeline needs approval from Avrami.
-
 ## Step 6 — Format the tree for RERconverge
 
 We created a tab-delimited file with **one gene name followed by one Newick tree on the same line**.
