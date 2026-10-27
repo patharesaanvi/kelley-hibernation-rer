@@ -28,7 +28,7 @@ Run the scripts from the repository folder (`~/kelley-hibernation-rer`) on Hummi
 | [`scripts/species_summary.py`](../scripts/species_summary.py) | Counts hibernating, non-hibernating, and uncertain candidates by mammal group. | Writes `rer_results/species_summary.tsv` in scratch. A separately committed copy is at [`results/species_summary.tsv`](../results/species_summary.tsv). |
 | [`scripts/build_hbb_alignment.py`](../scripts/build_hbb_alignment.py) | Reads the three extracted HBB MAF files and combines the reference-guided coding sequences for our species. | Writes `gene_alignments/HBB_53species_CDS.fasta` in scratch and prints missing base counts. |
 
-**Important:** Scratch outputs don't automatically show up on GitHub. The small summary in `results/` is a saved copy, so it needs to be updated manually if the script is run again. Running the mapping script can change your **local** metadata; commit and push it only after reviewing those changes.
+**Important:** Scratch outputs don't automatically show up on GitHub. The small summary in `results/` is a saved copy, so it needs to be updated manually if the script is run again. 
 
 ### Hiller trees I downloaded
 
