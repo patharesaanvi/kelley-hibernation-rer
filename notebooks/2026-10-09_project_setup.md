@@ -62,8 +62,24 @@ For the detailed explanation, genomic coordinates, run command, and quality conc
 - RAxML-NG final log-likelihood: **−5033.417582**.
 - RAxML-NG warning: **seven near-zero branches**.
 - The RERconverge input TSV has **one line starting with `HBB`**.
-- **I have not tested reading the file with RERconverge yet.** I have not established that HBB shows a hibernation-related rate shift.
+- **I successfully tested importing the HBB tree with RERconverge's `readTrees()` function.** I have not established that HBB shows a hibernation-related rate shift.
 
 ### What I still need to check
 
 The alignment is a preliminary **human-reference-guided** extraction. It doesn't preserve species-specific insertions, and I haven't verified that every aligned sequence is a true HBB ortholog. The final missing-data rule and method for estimating branch lengths also need to be decided.
+
+### October 27, 2026 — RERconverge HBB input test
+
+**Progress made**
+- Loaded R and RERconverge on Hummingbird and confirmed the package worked. The RERconverge environment ran R 4.2.3.
+- Used `readTrees()` with the HBB gene-tree TSV and 46-species pruned Hiller topology (`max.read = 1`, `minSpecs = 46`).
+- Successfully imported one HBB gene tree containing all 46 species.
+- Confirmed the imported tree retained the original RAxML-NG branch-length range (0.000001–0.247934); a branch-by-branch comparison is still needed.
+- RERconverge returned a master tree with branch lengths, but reported that the supplied pruned topology lacked lengths. The master-tree estimates are not yet validated as a genome-wide reference.
+
+**Next steps**
+- Investigate master-tree handling and compare branch lengths individually.
+- Validate HBB alignment quality and orthology, including possible globin paralogs.
+- Generate more orthologous gene trees before genome-wide relative-rate analysis.
+
+**Takeaway:** The basic RERconverge import worked. This is a technical input check, not evidence of hibernation-associated rate shifts. Full commands and results are in [the HBB pilot notes](../docs/hbb_pilot.md).
