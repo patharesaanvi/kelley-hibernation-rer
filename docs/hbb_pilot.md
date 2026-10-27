@@ -89,7 +89,7 @@ For this first test, I kept only sequences made entirely of A/C/G/T. This left *
 
 **Output:** `/scratch/spathare/hibernation_rer/gene_alignments/HBB_complete_CDS.fasta`
 
-This was a **strict pilot filter**, not a final missing-data rule. Phylogenetic programs can often handle some ambiguous bases, and automatically dropping all partially missing species could bias the dataset.
+For this initial test, I removed all seven species that had missing nucleotides in their HBB sequences to make the initial test simpler. Missing nucleotides give us less sequence information to work with which can make it harder to accurately estimate branch lengths, especially when a species has a lot of missing data. However, RAxML-NG can handle some missing nucleotides, so I still need to figure out how much missing data we should allow before excluding species from our actual analysis. 
 
 ## Step 4 — Prune the Hiller species tree
 
