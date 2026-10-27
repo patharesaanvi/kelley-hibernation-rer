@@ -146,7 +146,7 @@ Outputs include:
 | `gene_trees/HBB_test.raxml.log` | Run details, likelihood, and warnings |
 
 The log reported:
-- Final log-likelihood **−5033.417582**.
+- Final log-likelihood **−5033.417582**. --> measures how well the fitted model explains our observed sequence data. A higher log likelihood (less-negative) generally indicates a better fit. 
 - **46** tree tips, matching the FASTA.
 - Minimum reported branch length **0.000001**; maximum **0.247934**.
 - **7 near-zero branches**. These may reflect limited HBB sequence variation and should be reviewed.
