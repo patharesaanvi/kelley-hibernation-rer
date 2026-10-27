@@ -116,7 +116,7 @@ This is a **Newick-format** tree containing the Hiller topology. It did not yet 
 
 ## Step 5 — Estimate HBB branch lengths with RAxML-NG
 
-For the pilot, I used **RAxML-NG 1.2.0** because it was available on Hummingbird and supports branch-length optimization while keeping a supplied topology fixed.
+For the pilot, I used **RAxML-NG** because it was available on Hummingbird and supports branch-length optimization while keeping a supplied topology fixed.
 
 The command used:
 
