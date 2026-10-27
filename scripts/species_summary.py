@@ -41,11 +41,8 @@ scratch = Path(os.environ.get(
 output = scratch / "rer_results" / "species_summary.tsv"
 output.parent.mkdir(parents=True, exist_ok=True)
 
-groups = [
-    "Bats", "Squirrels and marmots", "Bears",
-    "Lemurs", "Other primates", "Other rodents",
-    "Other mammals"
-]
+# Use the taxonomic orders present in metadata rather than a fixed group list
+groups = sorted({row["mammal_group"].strip() for row in species if row["in_hiller"].strip().lower() == "yes"})
 categories = ["Foreground candidate", "Background", "Uncertain"]
 
 with open(output, "w", newline="") as file:
