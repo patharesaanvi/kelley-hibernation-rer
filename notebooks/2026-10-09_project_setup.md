@@ -67,26 +67,3 @@ For the detailed explanation, genomic coordinates, run command, and quality conc
 ### What I still need to check
 
 The alignment is a preliminary **human-reference-guided** extraction. It doesn't preserve species-specific insertions, and I haven't verified that every aligned sequence is a true HBB ortholog. The final missing-data rule and method for estimating branch lengths also need to be decided.
-
-The HBB filtering, Hiller-tree pruning, and final tree formatting were **one-off terminal commands**, not separately committed Python scripts.
-
-## Questions for Avrami
-
-1. I used **RAxML-NG** to estimate HBB branch lengths because it was on Hummingbird. Is this the method we want for the full pipeline, or is there a lab-preferred method?
-2. For genes with some missing nucleotides, how much missing sequence data should be acceptable? Should we drop very incomplete species but retain those with only a few missing positions?
-3. How should we validate orthology and alignments before generating gene trees for many genes?
-4. How should we define the hibernating foreground branches, especially for species with uncertain classifications?
-5. Once the HBB input-loading test works, should I start by automating a small set of orthologous genes?
-
-## Next to-dos
-
-- [ ] Discuss the gene-tree method and missing-data choices with Avrami.
-- [ ] Check HBB orthology, sequence alignment, coding frame, and gaps.
-- [ ] Test loading `hiller_hibernation_gene_trees.tsv` with RERconverge.
-- [ ] Save the temporary filter, tree-prune, and TSV-formatting commands as reusable scripts.
-- [ ] Test the workflow on several additional orthologous genes.
-- [ ] Finalize the phenotype assignments and gene-tree QC rules before processing the larger Hiller dataset.
-
-## My main takeaway
-
-I was able to **produce one preliminary gene-tree input from Hiller data**, but the important next step is to make sure the alignment and methods are reliable before scaling up. This week was about building the workflow, not making biological conclusions.
