@@ -142,7 +142,7 @@ Outputs include:
 | Output | Meaning |
 | --- | --- |
 | `gene_trees/HBB_test.raxml.bestTree` | Newick gene tree with estimated branch lengths |
-| `gene_trees/HBB_test.raxml.bestModel` | Fitted sequence-substitution model parameters |
+| `gene_trees/HBB_test.raxml.bestModel` | Tells us the model and estimated parameters used to describe DNA evolution |
 | `gene_trees/HBB_test.raxml.log` | Run details, likelihood, and warnings |
 
 The log reported:
