@@ -1,0 +1,9 @@
+metric	value
+replicates	100
+internal_splits	43
+mean_support_percent	55.58
+median_support_percent	53
+minimum_support_percent	2
+maximum_support_percent	100
+support_ge70_count	16
+support_ge95_count	11
