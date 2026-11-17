@@ -27,7 +27,7 @@ Identify genes with accelerated or decelerated evolutionary rates in hibernating
 - Added HBB topology, reference-gap and bootstrap checks (100 replicates).
 - Tested 10% missing data: 51 species retained; common-species branch-length correlation 0.9970099.
 - Attempted relative-rate calculation with one gene; import succeeded but residual calculation failed. More genes and quality checks are needed.
-- Next: verify metadata and orthology, investigate near-zero branches and master-tree lengths, agree on filtering/model, and test an automated pipeline on about 50 genes.
+- Next: verify metadata and orthology, investigate near-zero branches and master-tree lengths, and test an automated pipeline on about 50 genes.
 - [November quality-control notebook](notebooks/2026-11-17_quality_control.md)
 
 ## Repository Structure
