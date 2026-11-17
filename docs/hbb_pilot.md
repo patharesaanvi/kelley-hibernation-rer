@@ -252,7 +252,7 @@ Error in rowSums(treesObj$report[, cm]) :
 ```
 The exact cause has not been confirmed. More gene trees are needed for a meaningful background rate estimate. Master-tree lengths and individual imported branch lengths still need validation.
 
-See the [November notebook](../notebooks/2026-11-17_quality_control.md) for reproduction instructions and [results](../results/) for recorded summaries.
+See the [November notebook](../notebooks/2026-11-17_quality_control.md) for reproduction instructions and the recorded result tables.
 
 ## File locations
 
