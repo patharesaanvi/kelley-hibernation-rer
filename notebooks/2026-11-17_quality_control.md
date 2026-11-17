@@ -1,4 +1,4 @@
-# Lab notebook — November 17, 2026
+# Lab notebook — November, 2026
 
 ## Progress made
 
