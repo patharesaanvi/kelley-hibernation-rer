@@ -24,6 +24,12 @@ Identify genes with accelerated or decelerated evolutionary rates in hibernating
 - Filtered the HBB alignment to **46 complete sequences**, pruned the Hiller species tree, and used **RAxML-NG** to estimate gene-specific branch lengths.
 - Successfully tested the HBB tree with RERconverge's `readTrees()` function. All 46 species were imported, and the branch-length range matched the original RAxML-NG output. Alignment quality and orthology still need validation.
 
+- Added HBB topology, reference-gap and bootstrap checks (100 replicates).
+- Tested 10% missing data: 51 species retained; common-species branch-length correlation 0.9970099.
+- Attempted relative-rate calculation with one gene; import succeeded but residual calculation failed. More genes and quality checks are needed.
+- Next: verify metadata and orthology, investigate near-zero branches and master-tree lengths, agree on filtering/model, and test an automated pipeline on about 50 genes.
+- [November quality-control notebook](notebooks/2026-11-17_quality_control.md)
+
 ## Repository Structure
 
 - [`config/`](config/) — Species metadata and configuration files
