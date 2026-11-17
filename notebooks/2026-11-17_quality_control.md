@@ -59,11 +59,40 @@ The reference-gap, topology and one-gene RERconverge checks are kept below as no
 
 ## Saved results
 
-- [Bootstrap summary](../results/HBB_bootstrap_summary.tsv)
-- [Missing-data comparison](../results/HBB_missing_data_comparison.tsv)
+### Bootstrap results
+
+| Metric | Value |
+| --- | ---: |
+| `replicates` | 100 |
+| `internal_splits` | 43 |
+| `mean_support_percent` | 55.58 |
+| `median_support_percent` | 53 |
+| `minimum_support_percent` | 2 |
+| `maximum_support_percent` | 100 |
+| `support_ge70_count` | 16 |
+| `support_ge95_count` | 11 |
+
+### Missing-data comparison (0% vs 10%)
+
+| Metric | Value |
+| --- | ---: |
+| `strict_species` | 46 |
+| `relaxed_species` | 51 |
+| `relaxed_max_missing_fraction` | 0.10 |
+| `common_species` | 46 |
+| `pairwise_distance_count` | 1035 |
+| `pairwise_distance_correlation` | 0.9970543 |
+| `pairwise_distance_mean_absolute_difference` | 0.006230502 |
+| `pairwise_distance_max_absolute_difference` | 0.031482 |
+| `matched_branch_count` | 89 |
+| `branch_length_correlation` | 0.9970099 |
+| `branch_length_mean_absolute_difference` | 0.001681562 |
+| `branch_length_max_absolute_difference` | 0.012494 |
+| `strict_near_zero_count` | 7 |
+| `relaxed_near_zero_count` | 7 |
 - [Detailed pilot notes](../docs/hbb_pilot.md)
 
-The summary values were copied from the recorded pilot results; they were not newly calculated when these files were added.
+The summary values were copied from the recorded pilot results; they were not newly calculated when this summary was added.
 
 ## Questions / to do
 
