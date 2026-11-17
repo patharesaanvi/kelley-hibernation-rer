@@ -1,6 +1,6 @@
 # HBB pilot: from Hiller alignment to a gene-tree input
 
-**Status:** Preliminary pipeline test completed in October 2026. Not yet validated for biological interpretation or loaded into RERconverge.
+**Status:** Preliminary pipeline and RERconverge import tested; additional quality checks completed November 17, 2026. Not yet validated for biological interpretation.
 
 ## Why I tested HBB
 
@@ -229,6 +229,30 @@ RERconverge also returned a master tree with branch lengths ranging from 0.00179
 This test confirmed that our gene-tree TSV format is compatible with RERconverge and that the 46-species HBB tree can be imported.
 
 However, this does not mean we have completed the evolutionary-rate analysis. RERconverge requires a broader collection of gene trees to estimate genome-wide relative evolutionary-rate patterns.
+
+
+## November 17 — Additional quality-control checks
+
+### Reference gaps and topology
+I counted 129 human-reference gap-column occurrences in the extracted MAF blocks. Only 13 contained A/C/G/T from any of our selected mammals; none were strictly inside the selected coding intervals. This supports retaining the current reference-guided HBB alignment for the pilot, but does not establish that all coding insertions or orthologs are preserved.
+
+Using ape in R, I checked that the pruned Hiller topology and HBB tree both had 46 tips, identical tip sets, identical unrooted topologies, and no explicit polytomies. Some branches look like polytomies in the plot because they may be very short.
+
+### Bootstrap analysis
+I used RAxML-NG 1.2.0 to generate 100 nonparametric bootstrap trees (GTR+G, seed 42, two threads), without constraining replicate topology. I mapped Felsenstein bootstrap proportions onto the fixed HBB tree and plotted them with ape. Of 43 internal splits, 16 had support >=70%, 11 had support >=95%, and the mean was 55.58%. The bear clade had 100% support, but internal splits had 33% and 16%. HBB may not have enough informative variation to resolve every split. GTR+G was a pilot choice, not selected by model testing.
+
+### Missing-data sensitivity
+Allowing up to 10% non-ACGT positions retained 51 of 53 species instead of 46. I estimated branch lengths on the 51-tip fixed Hiller topology using the same model, then pruned the estimated tree back to the original 46 species for comparison (not before estimation). Pearson correlation across 1,035 pairwise distances was 0.9970543; across 89 matched branches it was 0.9970099. Mean absolute branch difference was 0.001681562 and maximum was 0.012494 substitutions/site. Both runs reported seven near-zero branches; their identities have not yet been compared. The result supports testing relaxed thresholds, but does not establish 10% as optimal across genes.
+
+### RERconverge residual test
+The one-gene tree imported, but getAllResiduals() failed with:
+```
+Error in rowSums(treesObj$report[, cm]) :
+  'x' must be an array of at least two dimensions
+```
+The exact cause has not been confirmed. More gene trees are needed for a meaningful background rate estimate. Master-tree lengths and individual imported branch lengths still need validation.
+
+See the [November notebook](../notebooks/2026-11-17_quality_control.md) for reproduction instructions and [results](../results/) for recorded summaries.
 
 ## File locations
 
