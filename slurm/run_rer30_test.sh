@@ -7,6 +7,8 @@
 #SBATCH --output=rer30_%j.out
 #SBATCH --error=rer30_%j.err
 
+# Import 30 Newick gene trees into RERconverge and save the tree object.
+# Requires gene_trees_30.tsv under the combined scratch output directory.
 set -e
 module load rerconverge/0.3.0
 cd ~/kelley-hibernation-rer
