@@ -30,7 +30,7 @@ Identify genes with relatively accelerated or decelerated evolutionary rates ass
 - Generated **30/30 gene-specific trees**, with **30–53 species per gene** after a **10% missing-data filter**. The script's minimum-species threshold was temporarily lowered from 35 to 4 after TRIM52 retained 30 species; this is a permissive **technical-test parameter, not an endorsed biological threshold**.
 - Checked that all 30 fitted trees have compatible unrooted topologies on their respective overlapping species sets, with no missing, negative, or nonfinite fitted branch lengths. These checks do **not** establish alignment quality or orthology.
 - Imported all 30 trees into RERconverge using `readTrees(minTreesAll = 3, max.read = 30)`. The resulting master tree includes **53 species**, with master branch lengths estimated from **three full-coverage genes**.
-- Completed `getAllResiduals()` using a square-root transformation, weighted fitting, and scaling. The **preliminary** output is a **30 × 627 gene-by-phylogenetic-path residual matrix**. Column meaning, missing/undefined residuals, and the numerical suitability of the rates require further validation.
+- Completed `getAllResiduals()`. The **preliminary** output is a **30 × 627 gene-by-phylogenetic-path residual matrix**. Column meaning, missing/undefined residuals, and the numerical suitability of the rates require further validation.
 - **No hibernation-phenotype association test has been run.**
 
 See [November 24 lab notebook](notebooks/2026-11-24_pilot30.md) and [30-gene pilot workflow](docs/pilot30_workflow.md).
