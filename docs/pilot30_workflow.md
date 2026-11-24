@@ -4,7 +4,7 @@
 - Starting point: a larger candidate list of human **MANE** protein-coding transcripts.
 - Pilot selection: first **30** candidate genes; the original 50-gene list was preserved.
 - Relevant per-gene information: gene, transcript, chromosome, strand, coding-exon intervals, and coding-sequence length.
-- Working candidate file on Hummingbird: `~/kelley_50gene_pilot/kelley_50gene_pilot/annotations/pilot30_candidates.tsv`.
+- Original candidate file on Hummingbird: `/scratch/spathare/hibernation_rer/annotations/pilot30_candidates.tsv`. The candidate list is also committed under [`annotations/pilot30_candidates.tsv`](../annotations/pilot30_candidates.tsv).
 
 ## 2. Retrieve coding-exon alignment regions
 - Alignment source: UCSC **Hiller hg38 470-way** mammalian alignment (indexed bigMaf regions).
@@ -15,7 +15,7 @@
 - Network requests and compute-intensive fitting were separated because compute-node network requests could time out.
 
 ## 3. Filter alignments and estimate gene trees
-- The extraction/fitting script used during the pilot was `extract_and_fit.py` on Hummingbird (not yet tracked on GitHub).
+- The extraction/fitting script used during the pilot was `extract_and_fit.py` on Hummingbird; its source is now tracked at [`scripts/extract_and_fit.py`](../scripts/extract_and_fit.py).
 - **Maximum missing-data fraction:** 0.10.
 - **Minimum species:** initially 35; reduced to 4 for **testing only** after TRIM52 retained 30 species.
 - **Observed gene coverage:** 30–53 species per gene; the temporary 4-species minimum did not result in four-species trees.
@@ -31,7 +31,7 @@
 - These tests do **not** establish orthology, codon-frame correctness, or reliability of every evolutionary-rate estimate.
 
 ## 5. Import into RERconverge
-The RERconverge import was run in a compute allocation via SLURM. Conceptual R invocation (the exact saved batch script has not yet been committed):
+The RERconverge import was run in a compute allocation via SLURM. The import script and SLURM wrapper are now committed as [`scripts/test_rer30.R`](../scripts/test_rer30.R) and [`slurm/run_rer30_test.sh`](../slurm/run_rer30_test.sh):
 
 ```r
 library(RERconverge)
@@ -43,22 +43,20 @@ trees <- readTrees(input, minTreesAll = 3, max.read = 30)
 
 Saved object: `/scratch/spathare/hibernation_rer/pilot30_combined/rer30_trees.rds`.
 
-## 6. Compute preliminary relative evolutionary-rate residuals
-The successful residual run used `getAllResiduals()` with:
-- `transform = "sqrt"`
-- `weighted = TRUE`
-- `scale = TRUE`
-- `useSpecies = trees$masterTree$tip.label`
+## 6. Calculate preliminary relative evolutionary-rate residuals
 
-The installed function reported a default cutoff of **0.00187805**. Output: a **30 × 627** matrix stored at `/scratch/spathare/hibernation_rer/pilot30_combined/rer30_residuals.rds`.
+The residual calculation was completed using RERconverge's `getAllResiduals()` with a square-root transformation, weighted fitting, scaling, and the species listed in the master tree. The corresponding analysis code is committed as [`scripts/calculate_rer30.R`](../scripts/calculate_rer30.R).
 
-The 627 columns are indexed **phylogenetic-path entries**, not 627 species or 627 independent lineages. Their structure and missing values need further interpretation. Recorded cell counts: **2,199 finite**, **16,088 NA**, **523 NaN**, **0 infinite**. Subsequent mapping diagnostics showed that most completely nonfinite path columns were not selected by the algorithm, but some selected paths also contain undefined values.
+**Observed output:** A residual matrix containing **30 genes and 627 phylogenetic-path columns**, saved at `/scratch/spathare/hibernation_rer/pilot30_combined/rer30_residuals.rds`.
 
-## 7. Reproduction and remaining work
-**Now committed to GitHub:** `../scripts/prepare_pilot.py`, `../scripts/stage_thirty.py`, `../scripts/extract_and_fit.py`, `../scripts/test_rer30.R`, `../scripts/calculate_rer30.R`, the pilot candidate tables under `../annotations/`, and the corresponding SLURM wrappers in `../slurm/`. The SLURM wrappers have been changed to invoke the repository's `scripts/` paths, without altering analysis parameters.
+**Next step:** Understand how the phylogenetic paths are represented in this matrix and validate the results before interpreting evolutionary-rate differences. No hibernation association analysis or biological result is claimed at this stage.
 
-**Remaining external inputs and constraints:** The staged exon BED files and full Hiller data remain under Hummingbird scratch. `stage_thirty.py` currently uses fixed scratch paths. The separately rerun TRIM52 SLURM script expects `$SCRATCH/annotations/TRIM52_only.tsv`, which is not yet tracked. Output files use exclusive creation and existing run directories may cause errors on rerun. The updated wrapper paths have not been independently executed on Hummingbird.
+## 7. Reproducibility and remaining work
 
-Before treating this workflow as fully reproducible from GitHub, copy and review those scripts, commit their **actual** contents, record exact command-line arguments, software versions and run commands, and keep data paths configurable. Do not commit large exon files, gene alignments, RAxML-NG scratch outputs, or RDS matrices.
+**GitHub repository:** The Python scripts for candidate-gene preparation, exon staging, and gene-tree generation, along with the RERconverge analysis scripts, SLURM submission scripts, and pilot candidate gene lists, have been committed to GitHub. The SLURM scripts have been updated to use the repository's `scripts/` paths; their analysis parameters were not changed.
 
-**Not done:** final species-coverage decision, genome-scale analysis, hibernation association testing, candidate gene identification, and biological interpretation.
+**Saved data and outputs:** The staged exon alignment files, gene trees, and RERconverge output files remain stored on Hummingbird. These large computational outputs have not been uploaded to GitHub.
+
+**Remaining reproducibility work:** Verify the updated SLURM launch paths and required input dependencies, document the software environment and run commands, and establish that the workflow can be reproduced using the repository. `stage_thirty.py` still uses fixed Hummingbird scratch paths. The separately rerun TRIM52 wrapper references `$SCRATCH/annotations/TRIM52_only.tsv`, which is not currently tracked in GitHub; that input needs to be included or its generation documented. Some output files use exclusive creation, so a rerun may require a fresh output directory. The updated wrappers have not yet been independently executed on Hummingbird.
+
+**Next research steps:** Understand and validate the 627 phylogenetic-path columns before interpreting evolutionary-rate differences. Subsequent work includes deciding final species-coverage criteria, scaling the analysis to additional genes, testing evolutionary-rate associations with hibernation, and interpreting any supported biological findings.
