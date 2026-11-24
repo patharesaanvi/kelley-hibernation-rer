@@ -40,14 +40,14 @@ See [November 24 lab notebook](notebooks/2026-11-24_pilot30.md) and [30-gene pil
 - Understand the RERconverge path matrix and the missing/undefined residual values; determine whether further filtering or normalization checks are needed.
 - Review coding alignment, strand/frame handling, orthology, and branch-length quality across genes.
 - Decide a scientifically suitable minimum species/lineage coverage with the supervising researcher.
-- Finish transferring the original multi-gene Python staging/fitting scripts, first-five-gene wrapper, and candidate annotation files from Hummingbird. Six R and SLURM scripts have been added from the November 24 terminal excerpts; these are preserved with historical Hummingbird working paths and have not been independently rerun.
+- The core Python staging/fitting scripts, five-/25-gene SLURM wrappers, RERconverge scripts and the three pilot candidate tables are committed. Five SLURM wrappers were updated to reference the repository's scripts/ directory; these revised wrappers have not been rerun on Hummingbird. The separate TRIM52-only candidate file and some exact run-preparation steps remain to document.
 - Expand to a larger gene set before interpreting rates and performing hibernation association tests.
 
 ## Repository structure
 
 - [`config/`](config/) — Species metadata and configuration.
-- [`scripts/`](scripts/) — Committed HBB scripts and the 30-gene RERconverge import/residual scripts; core multi-gene Python scripts are still on Hummingbird.
-- [`slurm/`](slurm/) — Historical SLURM submission wrappers for the 30-gene pilot; still refer to original Hummingbird paths.
+- [`scripts/`](scripts/) — Committed HBB and 30-gene Python/R scripts.
+- [`slurm/`](slurm/) — SLURM submission wrappers for the 30-gene pilot, updated to invoke scripts in this repository.
 - [`notebooks/`](notebooks/) — Dated research notes.
 - [`docs/`](docs/) — Input requirements, HBB pilot, and 30-gene workflow documentation.
 - [`results/`](results/) — Small, checked-in summaries (not large analysis outputs).
@@ -58,7 +58,7 @@ Large datasets, alignments, estimated trees, RERconverge RDS objects, and job ou
 
 `/scratch/spathare/hibernation_rer/`
 
-In particular, the combined pilot outputs are under `pilot30_combined/`. The GitHub repository is **not yet an independently runnable copy of the complete 30-gene pipeline**: core Python files, the first-five-gene wrapper, and candidate annotations remain on Hummingbird. The uploaded SLURM scripts retain historical working-directory assumptions.
+In particular, the combined pilot outputs are under `pilot30_combined/`. Core source code and candidate tables are committed. Full rerun still depends on original Hummingbird software modules, pre-staged UCSC exon data under scratch, and a fresh output directory; the separate TRIM52-only annotation file is not yet tracked. No rerun of the revised wrappers has been verified.
 
 ## Resources
 
