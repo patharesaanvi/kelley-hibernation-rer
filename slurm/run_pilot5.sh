@@ -7,6 +7,9 @@
 #SBATCH --output=pilot5_%j.out
 #SBATCH --error=pilot5_%j.err
 
+# Reproduce the first five-gene branch-length estimation batch.
+# Requires staged exon files, Hiller topology, species metadata, and
+# the Hummingbird Python environment with Biopython and RAxML-NG.
 set -e
 source ~/kelley-hibernation-env/bin/activate
 module load ohpc
@@ -17,6 +20,7 @@ SCRATCH=/scratch/spathare/hibernation_rer
 echo "=== Starting 5-gene pilot ==="
 hostname
 date
+# The initial batch used a 35-species minimum and 10% maximum missingness.
 python scripts/extract_and_fit.py \
   --candidates "$SCRATCH/annotations/pilot5_candidates.tsv" \
   --species ~/kelley-hibernation-rer/config/species_metadata.tsv \
