@@ -7,6 +7,8 @@
 #SBATCH --output=rer30_rates_%j.out
 #SBATCH --error=rer30_rates_%j.err
 
+# Calculate preliminary relative-rate residuals from rer30_trees.rds.
+# This job does not perform hibernation association testing.
 set -e
 module load rerconverge/0.3.0
 cd ~/kelley-hibernation-rer
