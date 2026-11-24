@@ -7,12 +7,16 @@
 #SBATCH --output=trim52_%j.out
 #SBATCH --error=trim52_%j.err
 
+# Re-run TRIM52 separately because it did not meet the initial
+# 35-species threshold. This wrapper uses a 4-species minimum for testing.
+# Requires the scratch-only TRIM52_only.tsv annotation file.
 set -e
 source ~/kelley-hibernation-env/bin/activate
 module load ohpc
 module load raxml-ng/1.2.0
 cd ~/kelley-hibernation-rer
 SCRATCH=/scratch/spathare/hibernation_rer
+# Fit branch lengths for TRIM52 on the pruned, fixed Hiller topology.
 python scripts/extract_and_fit.py \
   --candidates "$SCRATCH/annotations/TRIM52_only.tsv" \
   --species ~/kelley-hibernation-rer/config/species_metadata.tsv \
