@@ -1,50 +1,63 @@
 # Mammalian Hibernation — Relative Evolutionary Rate Analysis
 
-Kelley Lab computational research project investigating evolutionary rate shifts associated with hibernation across mammalian species using RERconverge.
+Kelley Lab computational research project investigating evolutionary-rate shifts associated with hibernation across mammals using RERconverge.
 
-## Research Objective
+## Research objective
 
-Identify genes with accelerated or decelerated evolutionary rates in hibernating mammals compared with non-hibernating mammals, including changes shared across independently hibernating lineages.
+Identify genes with relatively accelerated or decelerated evolutionary rates associated with hibernation, including possible shared shifts across independently hibernating lineages. **No phenotype-association results or candidate hibernation genes have been established yet.**
 
 ## Workflow
 
-1. Use the **Hiller 470-way mammalian genome alignment**.
-2. Identify hibernating species and suitable non-hibernating comparison species.
-3. Extract and check orthologous gene alignments.
-4. Generate gene-specific phylogenetic trees and estimate branch lengths.
-5. Use RERconverge to identify evolutionary rate shifts associated with hibernation.
-6. Perform statistical testing, multiple-testing correction, and functional enrichment.
-7. Compare findings with differential gene expression results and perform follow-up selection analyses.
+1. Start with the **Hiller 470-way mammalian alignment** and the selected mammalian assemblies.
+2. Identify human coding-exon intervals from MANE transcript annotations and extract corresponding aligned sequences.
+3. Filter gene-specific alignments for missing sequence data and retained taxa.
+4. Use RAxML-NG to optimize branch lengths on a fixed species-tree topology.
+5. Assemble compatible gene trees and import them using RERconverge `readTrees()`.
+6. Calculate preliminary relative evolutionary-rate residuals with `getAllResiduals()`; inspect their structure and quality.
+7. **Planned, not yet performed:** expand the background gene set, validate phenotypes, test associations with hibernation, apply multiple-testing correction, and investigate functional enrichment and other biological follow-up analyses.
 
-## Current Progress
+## Current progress — November 24, 2026
 
-- Created species metadata for **58 candidate mammals**, with **53 represented in Hiller**.
-- Developed scripts to check species availability, genome assembly IDs, and hibernation classifications.
-- Used **HBB** as a test gene to extract a 53-species alignment from Hiller.
-- Filtered the HBB alignment to **46 complete sequences**, pruned the Hiller species tree, and used **RAxML-NG** to estimate gene-specific branch lengths.
-- Successfully tested the HBB tree with RERconverge's `readTrees()` function. All 46 species were imported, and the branch-length range matched the original RAxML-NG output. Alignment quality and orthology still need validation.
+### Initial HBB pilot
+- Prepared the selected-species metadata: **58 candidate mammals**, **53 represented in Hiller**.
+- Extracted HBB coding-alignment data and fitted RAxML-NG branch lengths on a pruned, fixed Hiller topology.
+- Confirmed that RERconverge `readTrees()` could import the single HBB tree; `getAllResiduals()` could not be completed meaningfully with this single-gene input.
+- Performed HBB reference-gap, topology, bootstrap (100 replicates), and 10%-missingness checks; see the [November 17 notebook](notebooks/2026-11-17_quality_control.md).
 
-- Added HBB topology, reference-gap and bootstrap checks (100 replicates).
-- Tested 10% missing data: 51 species retained; common-species branch-length correlation 0.9970099.
-- Attempted relative-rate calculation with one gene; import succeeded but residual calculation failed. More genes and quality checks are needed.
-- Next: verify metadata and orthology, investigate near-zero branches and master-tree lengths, and test an automated pipeline on about 50 genes.
-- [November quality-control notebook](notebooks/2026-11-17_quality_control.md)
+### Multi-gene technical pilot
+- Adapted the existing extraction / RAxML-NG workflow for **30 selected protein-coding genes**.
+- Staged **153 nonempty coding-exon files** from the Hiller 470-way alignment.
+- Generated **30/30 gene-specific trees**, with **30–53 species per gene** after a **10% missing-data filter**. The script's minimum-species threshold was temporarily lowered from 35 to 4 after TRIM52 retained 30 species; this is a permissive **technical-test parameter, not an endorsed biological threshold**.
+- Checked that all 30 fitted trees have compatible unrooted topologies on their respective overlapping species sets, with no missing, negative, or nonfinite fitted branch lengths. These checks do **not** establish alignment quality or orthology.
+- Imported all 30 trees into RERconverge using `readTrees(minTreesAll = 3, max.read = 30)`. The resulting master tree includes **53 species**, with master branch lengths estimated from **three full-coverage genes**.
+- Completed `getAllResiduals()` using a square-root transformation, weighted fitting, and scaling. The **preliminary** output is a **30 × 627 gene-by-phylogenetic-path residual matrix**. Column meaning, missing/undefined residuals, and the numerical suitability of the rates require further validation.
+- **No hibernation-phenotype association test has been run.**
 
-## Repository Structure
+See [November 24 lab notebook](notebooks/2026-11-24_pilot30.md) and [30-gene pilot workflow](docs/pilot30_workflow.md).
 
-- [`config/`](config/) — Species metadata and configuration files
-- [`scripts/`](scripts/) — Python analysis and validation scripts
-- [`notebooks/`](notebooks/) — Research progress and lab notes
-- [`docs/`](docs/) — Detailed methodology, including the [HBB pilot](docs/hbb_pilot.md)
-- [`results/`](results/) — Small saved analysis summaries
+## Next steps
 
-## Data Storage
+- Understand the RERconverge path matrix and the missing/undefined residual values; determine whether further filtering or normalization checks are needed.
+- Review coding alignment, strand/frame handling, orthology, and branch-length quality across genes.
+- Decide a scientifically suitable minimum species/lineage coverage with the supervising researcher.
+- Bring the actual multi-gene scripts and SLURM job files from Hummingbird into version control after reviewing them.
+- Expand to a larger gene set before interpreting rates and performing hibernation association tests.
 
-Raw genomic data, gene alignments, gene trees, and intermediate files are stored on Hummingbird scratch under:
+## Repository structure
+
+- [`config/`](config/) — Species metadata and configuration.
+- [`scripts/`](scripts/) — **Currently committed** scripts, principally for species metadata and the HBB pilot; the new multi-gene scripts have not yet been uploaded.
+- [`notebooks/`](notebooks/) — Dated research notes.
+- [`docs/`](docs/) — Input requirements, HBB pilot, and 30-gene workflow documentation.
+- [`results/`](results/) — Small, checked-in summaries (not large analysis outputs).
+
+## Data storage
+
+Large datasets, alignments, estimated trees, RERconverge RDS objects, and job output remain on Hummingbird under:
 
 `/scratch/spathare/hibernation_rer/`
 
-GitHub contains the scripts, species metadata, small results, and documentation.
+In particular, the combined pilot outputs are under `pilot30_combined/`. The GitHub repository is **not yet an independently runnable copy of the complete 30-gene pipeline** until the Hummingbird-only scripts and their dependencies are committed.
 
 ## Resources
 
