@@ -69,7 +69,7 @@ HBB<TAB>((speciesA:0.01,speciesB:0.02):0.03,speciesC:0.04);
 
 Here, `<TAB>` represents an actual tab; the example species and numbers are **illustrative**. The real pilot file contains a 46-tip tree. A larger run would need many gene-specific trees plus a validated phenotype/foreground definition.
 
-**Status:** Generated a one-gene file; not yet tested with RERconverge.
+**Status update (November 24, 2026):** The one-gene HBB tree was imported successfully with `readTrees()` in October. A separate **30-gene** tree file was subsequently prepared at `/scratch/spathare/hibernation_rer/pilot30_combined/gene_trees_30.tsv`, successfully imported using `readTrees(minTreesAll=3, max.read=30)`, and used to calculate a preliminary 30 × 627 residual matrix with `getAllResiduals()`. See [the 30-gene workflow](pilot30_workflow.md). Residual validation and phenotype-association testing remain outstanding.
 
 ## 6. Planned downstream analysis
 
@@ -81,7 +81,7 @@ Once the gene trees and phenotype definitions are validated, the proposed resear
 - Comparison with genes showing shared hibernation-associated differential expression.
 - Follow-up branch-site tests using PAML `codeml` to help investigate selection versus relaxation of constraint.
 
-None of these biological analyses has been completed using the HBB pilot.
+The 30-gene pilot has now completed the **preliminary residual-calculation step only**. Hibernation phenotype-association testing, multiple-testing correction, enrichment, expression comparisons, and selection analyses have **not** been completed. See [the November 24 lab notebook](../notebooks/2026-11-24_pilot30.md).
 
 ## 7. Where scripts and output files are kept
 
@@ -100,6 +100,7 @@ All scratch paths are relative to `/scratch/spathare/hibernation_rer/`.
 1. Confirm the preferred gene-tree branch-length estimation method with Avrami.
 2. Review orthology and codon alignment of the HBB pilot.
 3. Decide how much missing data is acceptable per species/gene.
-4. Test reading the pilot gene-tree file in RERconverge.
-5. Turn temporary filtering/pruning/formatting commands into reusable scripts.
-6. Pilot multiple orthologous genes before scaling up.
+4. Investigate the structure and NA/NaN values of the successful 30-gene RERconverge residual matrix.
+5. Add the **actual** new multi-gene staging, fitting, and RERconverge scripts from Hummingbird to GitHub and record their run commands.
+6. Validate alignment quality and orthology, then decide on suitable minimum species/lineage coverage before scaling up.
+7. Expand to a larger, better-supported gene set before phenotype-association analysis.
