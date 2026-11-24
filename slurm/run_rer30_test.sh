@@ -9,5 +9,5 @@
 
 set -e
 module load rerconverge/0.3.0
-cd ~/kelley_50gene_pilot/kelley_50gene_pilot
-Rscript test_rer30.R
+cd ~/kelley-hibernation-rer
+Rscript scripts/test_rer30.R
