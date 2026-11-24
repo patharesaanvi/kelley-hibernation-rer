@@ -6,6 +6,9 @@ import argparse,csv,subprocess,shutil,re,io,sys
 from pathlib import Path
 from Bio import AlignIO,Phylo
 from Bio.Seq import Seq
+# Inputs: staged exon BED4 files, candidate-gene table, species metadata,
+# and the master species-tree topology. Outputs: per-gene alignments,
+# RAxML-NG branch-length trees, a status table, and a combined tree TSV.
 p=argparse.ArgumentParser()
 p.add_argument('--candidates',required=True,type=Path)
 p.add_argument('--species',required=True,type=Path)
@@ -22,6 +25,7 @@ for binary in ('bigBedToBed','raxml-ng'):
     if not shutil.which(binary):raise SystemExit(f'Missing executable: {binary}; load the cluster module first')
 if not a.master.is_file():raise SystemExit('Missing master species tree')
 a.outdir.mkdir(parents=True,exist_ok=True)
+# Retain only requested assemblies that are present in the master tree.
 selected={'hg38'}
 with a.species.open() as f:
     for row in csv.DictReader(f,delimiter='\t'):
@@ -33,6 +37,8 @@ summary=a.outdir/'pilot_status.tsv'
 if summary.exists():raise SystemExit('Status file exists; use a NEW output directory to avoid overwrites')
 with a.candidates.open() as f:candidates=list(csv.DictReader(f,delimiter='\t'))
 
+# Process one candidate gene. The exon files are staged in advance;
+# this function does not retrieve bigMaf data from the network.
 def process(row,folder):
     gene=row['gene'];chrom=row['chrom']; strand=row['strand']; coords=[]
     for part in row['coordinates'].split(','):
@@ -50,6 +56,7 @@ def process(row,folder):
                 raise ValueError('Cached BED file is empty')
         else:
             raise ValueError(f'Missing staged BED file: {bed}')
+        # Initialize each exon with Ns so uncovered bases count as missing data.
         positions={s:['N']*(end-start) for s in selected}
         maf=[]
         with bed.open() as f:
@@ -58,6 +65,7 @@ def process(row,folder):
                 if len(fields)<4:raise ValueError('Expected BED4 bigMaf records')
                 maf.append(fields[3].replace(';', '\n').rstrip() + '\n\n')
         if not maf:raise ValueError(f'No bigMaf records for exon {chrom}:{start}-{end}')
+        # Place aligned bases at their hg38 reference positions, ignoring gaps.
         for block in AlignIO.parse(io.StringIO(''.join(maf)),'maf'):
             ref=next((rec for rec in block if rec.id.startswith('hg38.')),None)
             if ref is None:continue
@@ -79,6 +87,8 @@ def process(row,folder):
                 ref_pos+=1
         for s in selected:pieces[s].extend(positions[s])
     seqs={}
+    # Concatenate coding exons, orient negative-strand genes, and filter
+# assemblies exceeding the allowed missing-base fraction.
     for s,parts in pieces.items():
         seq=''.join(parts)
         if strand=='-':seq=str(Seq(seq).reverse_complement())
@@ -95,12 +105,15 @@ def process(row,folder):
     fasta=folder/f'{gene}.fasta'
     with fasta.open('x') as f:
         for name in sorted(seqs):f.write(f'>{name}\n{seqs[name]}\n')
+    # Prune the fixed species-tree topology to the retained assemblies.
     tree=Phylo.read(str(a.master),'newick')
     for tip in list(tree.get_terminals()):
         if tip.name not in seqs:tree.prune(tip)
     if {tip.name for tip in tree.get_terminals()}!=set(seqs):raise ValueError('Pruned tree tips mismatch FASTA')
     tree_path=folder/f'{gene}.topology.nwk';Phylo.write(tree,str(tree_path),'newick')
     prefix=folder/gene
+    # Estimate branch lengths on the FIXED topology under GTR+G;
+# --evaluate does not search for a new branching arrangement.
     cmd=['raxml-ng','--evaluate','--msa',str(fasta),'--tree',str(tree_path),'--model','GTR+G','--prefix',str(prefix),'--threads',str(a.threads),'--seed','42']
     with (folder/'raxml.stdout.log').open('w') as out:
         subprocess.run(cmd,stdout=out,stderr=subprocess.STDOUT,check=True)
@@ -110,6 +123,7 @@ def process(row,folder):
     if {t.name for t in tree_result.get_terminals()}!=set(seqs):raise ValueError('RAxML-NG tip mismatch')
     return len(seqs),len(human),best.read_text().strip()
 
+# Attempt genes in candidate-table order and record individual failures.
 successful=[]
 with summary.open('x',newline='') as status:
     w=csv.writer(status,delimiter='\t');w.writerow(['gene','status','n_species','cds_bp','reason'])
@@ -129,6 +143,7 @@ with summary.open('x',newline='') as status:
             print(f'FAIL {gene}: {e}',file=sys.stderr,flush=True)
         status.flush()
     status.flush()
+# Save successful gene names and Newick trees for RERconverge import.
 out=a.outdir/'gene_trees.tsv'
 with out.open('x') as f:
     for gene,tree in successful:f.write(gene+'\t'+tree+'\n')
