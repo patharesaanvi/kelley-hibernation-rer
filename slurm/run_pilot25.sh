@@ -7,6 +7,9 @@
 #SBATCH --output=pilot25_%j.out
 #SBATCH --error=pilot25_%j.err
 
+# Run the additional 25-gene pilot batch with staged exon alignments.
+# The 4-species threshold was used for technical testing; observed gene
+# trees in the completed pilot retained substantially more species.
 set -e
 source ~/kelley-hibernation-env/bin/activate
 module load ohpc
@@ -16,6 +19,7 @@ SCRATCH=/scratch/spathare/hibernation_rer
 echo "=== Starting 25-gene pilot ==="
 hostname
 date
+# Use the remaining-25 candidate file; gene trees are saved in scratch.
 python scripts/extract_and_fit.py \
   --candidates "$SCRATCH/annotations/pilot30_remaining25.tsv" \
   --species ~/kelley-hibernation-rer/config/species_metadata.tsv \
