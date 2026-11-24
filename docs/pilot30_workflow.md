@@ -1,6 +1,6 @@
 # 30-gene pilot workflow — November 24, 2026
 
-This page describes the **workflow that was tested** and the saved outputs. It is not yet a self-contained executable tutorial: the core Python scripts and candidate annotation files used on Hummingbird have not yet been added to GitHub. For exact counts and limitations see [the dated notebook](../notebooks/2026-11-24_pilot30.md).
+This page describes the **workflow that was tested** and the saved outputs. It is not yet a self-contained executable tutorial: the core Python scripts and candidate annotation files are now checked into GitHub, but the workflow still requires HPC modules, source alignment data, and pre-staged exon files. For exact counts and limitations see [the dated notebook](../notebooks/2026-11-24_pilot30.md).
 
 ## 1. Prepare the candidate genes
 - Starting point: a larger candidate list of human **MANE** protein-coding transcripts.
@@ -57,12 +57,9 @@ The installed function reported a default cutoff of **0.00187805**. Output: a **
 The 627 columns are indexed **phylogenetic-path entries**, not 627 species or 627 independent lineages. Their structure and missing values need further interpretation. Recorded cell counts: **2,199 finite**, **16,088 NA**, **523 NaN**, **0 infinite**. Subsequent mapping diagnostics showed that most completely nonfinite path columns were not selected by the algorithm, but some selected paths also contain undefined values.
 
 ## 7. Reproduction and remaining work
-The following are **existing working files on Hummingbird**, not verified tracked files in this GitHub repository:
-- `stage_thirty.py` — multi-gene exon staging
-- `extract_and_fit.py` — local alignment extraction/filtering and RAxML-NG fitting
-- The first-five-gene SLURM script and candidate annotation files
+**Now committed to GitHub:** `../scripts/prepare_pilot.py`, `../scripts/stage_thirty.py`, `../scripts/extract_and_fit.py`, `../scripts/test_rer30.R`, `../scripts/calculate_rer30.R`, the pilot candidate tables under `../annotations/`, and the corresponding SLURM wrappers in `../slurm/`. The SLURM wrappers have been changed to invoke the repository's `scripts/` paths, without altering analysis parameters.
 
-**Now committed from supplied terminal excerpts:** `../scripts/test_rer30.R`, `../scripts/calculate_rer30.R`, `../slurm/run_pilot25.sh`, `../slurm/run_trim52.sh`, `../slurm/run_rer30_test.sh`, and `../slurm/run_rer30_residuals.sh`. These retain historical Hummingbird working-directory assumptions.
+**Remaining external inputs and constraints:** The staged exon BED files and full Hiller data remain under Hummingbird scratch. `stage_thirty.py` currently uses fixed scratch paths. The separately rerun TRIM52 SLURM script expects `$SCRATCH/annotations/TRIM52_only.tsv`, which is not yet tracked. Output files use exclusive creation and existing run directories may cause errors on rerun. The updated wrapper paths have not been independently executed on Hummingbird.
 
 Before treating this workflow as fully reproducible from GitHub, copy and review those scripts, commit their **actual** contents, record exact command-line arguments, software versions and run commands, and keep data paths configurable. Do not commit large exon files, gene alignments, RAxML-NG scratch outputs, or RDS matrices.
 
