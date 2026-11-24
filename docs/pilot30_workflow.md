@@ -1,7 +1,5 @@
 # 30-gene pilot workflow — November 24, 2026
 
-This page describes the **workflow that was tested** and the saved outputs. It is not yet a self-contained executable tutorial: the core Python scripts and candidate annotation files are now checked into GitHub, but the workflow still requires HPC modules, source alignment data, and pre-staged exon files. For exact counts and limitations see [the dated notebook](../notebooks/2026-11-24_pilot30.md).
-
 ## 1. Prepare the candidate genes
 - Starting point: a larger candidate list of human **MANE** protein-coding transcripts.
 - Pilot selection: first **30** candidate genes; the original 50-gene list was preserved.
