@@ -4,6 +4,9 @@ No alignment files are changed. Python 3 standard library only.
 """
 import argparse,csv,random,collections,re
 from pathlib import Path
+# Select a reproducible subset of compact, multi-exon MANE coding sequences.
+# Input: a tab-separated table of coding-exon intervals in hg38 coordinates.
+# Output: candidate genes with transcript IDs and comma-separated exon ranges.
 p=argparse.ArgumentParser()
 p.add_argument('--intervals',required=True,type=Path)
 p.add_argument('--out',required=True,type=Path)
@@ -32,6 +35,7 @@ print('Input rows:',len(records))
 # Detect common 1-based conventions and exit rather than silently shifting exons.
 if any('1based' in h.lower().replace('_','') for h in [start,end]):
     raise SystemExit('Input labels imply 1-based coordinates; convert to BED 0-based half-open before proceeding.')
+# Group exon intervals by gene, transcript, chromosome, and strand.
 groups=collections.defaultdict(list)
 for row in records:
     try: lo,hi=int(row[start]),int(row[end])
@@ -42,6 +46,8 @@ for row in records:
     transcript=row[t].strip() if t else gene
     orientation=row[strand].strip() if strand else '?'
     groups[(gene,transcript,assembly_chr,orientation)].append((lo,hi))
+# Keep genes with 2–8 non-overlapping exons and a 600–3500 bp CDS.
+# These are technical pilot-selection criteria, not biological filters.
 options=[]
 for (gene,transcript,c,s),ranges in groups.items():
     ranges=sorted(set(ranges)); length=sum(y-x for x,y in ranges)
@@ -53,11 +59,13 @@ for (gene,transcript,c,s),ranges in groups.items():
 by_gene={}
 for x in sorted(options,key=lambda z:(z[0],z[1])):by_gene.setdefault(x[0],x)
 selected=list(by_gene.values())
+# Fix the shuffle seed so the candidate order is reproducible.
 random.Random(20261123).shuffle(selected)
 print('Eligible distinct genes:',len(selected))
 if len(selected)<a.n:raise SystemExit(f'Insufficient eligible genes ({len(selected)}). No files written; inspect columns and selection thresholds.')
 a.out.parent.mkdir(parents=True,exist_ok=True)
 if a.out.exists():raise SystemExit(f'Refusing to overwrite {a.out}')
+# Export a candidate table consumed by staging and tree-fitting scripts.
 with a.out.open('w',newline='') as f:
     w=csv.writer(f,delimiter='\t');w.writerow(['gene','transcript','chrom','strand','exons','cds_bp','coordinates'])
     for x in selected[:a.n+a.backups]:
