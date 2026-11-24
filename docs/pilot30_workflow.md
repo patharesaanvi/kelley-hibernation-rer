@@ -1,6 +1,6 @@
 # 30-gene pilot workflow — November 24, 2026
 
-This page describes the **workflow that was tested** and the saved outputs. It is not yet a self-contained executable tutorial: several scripts used on Hummingbird have not been added to GitHub. For exact counts and limitations see [the dated notebook](../notebooks/2026-11-24_pilot30.md).
+This page describes the **workflow that was tested** and the saved outputs. It is not yet a self-contained executable tutorial: the core Python scripts and candidate annotation files used on Hummingbird have not yet been added to GitHub. For exact counts and limitations see [the dated notebook](../notebooks/2026-11-24_pilot30.md).
 
 ## 1. Prepare the candidate genes
 - Starting point: a larger candidate list of human **MANE** protein-coding transcripts.
@@ -60,8 +60,9 @@ The 627 columns are indexed **phylogenetic-path entries**, not 627 species or 62
 The following are **existing working files on Hummingbird**, not verified tracked files in this GitHub repository:
 - `stage_thirty.py` — multi-gene exon staging
 - `extract_and_fit.py` — local alignment extraction/filtering and RAxML-NG fitting
-- SLURM batch scripts for the first five and next 25 genes
-- R scripts for `readTrees()` and `getAllResiduals()`
+- The first-five-gene SLURM script and candidate annotation files
+
+**Now committed from supplied terminal excerpts:** `../scripts/test_rer30.R`, `../scripts/calculate_rer30.R`, `../slurm/run_pilot25.sh`, `../slurm/run_trim52.sh`, `../slurm/run_rer30_test.sh`, and `../slurm/run_rer30_residuals.sh`. These retain historical Hummingbird working-directory assumptions.
 
 Before treating this workflow as fully reproducible from GitHub, copy and review those scripts, commit their **actual** contents, record exact command-line arguments, software versions and run commands, and keep data paths configurable. Do not commit large exon files, gene alignments, RAxML-NG scratch outputs, or RDS matrices.
 
