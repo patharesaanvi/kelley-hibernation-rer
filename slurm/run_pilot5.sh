@@ -11,13 +11,13 @@ set -e
 source ~/kelley-hibernation-env/bin/activate
 module load ohpc
 module load raxml-ng/1.2.0
-cd ~/kelley_50gene_pilot/kelley_50gene_pilot
+cd ~/kelley-hibernation-rer
 SCRATCH=/scratch/spathare/hibernation_rer
 
 echo "=== Starting 5-gene pilot ==="
 hostname
 date
-python extract_and_fit.py \
+python scripts/extract_and_fit.py \
   --candidates "$SCRATCH/annotations/pilot5_candidates.tsv" \
   --species ~/kelley-hibernation-rer/config/species_metadata.tsv \
   --master "$SCRATCH/raw_alignments/hiller470/hg38.470way.nh" \
