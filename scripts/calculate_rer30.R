@@ -1,3 +1,6 @@
+# Calculate preliminary relative evolutionary-rate residuals.
+# Input: the RERconverge tree collection saved by test_rer30.R.
+# Output: rer30_residuals.rds (gene-by-path residual matrix).
 library(RERconverge)
 
 root <- "/scratch/spathare/hibernation_rer/pilot30_combined"
@@ -11,8 +14,11 @@ cat("Gene trees:", length(trees$trees), "\n")
 cat("Species:", length(trees$masterTree$tip.label), "\n")
 
 # Use the parameters supported by the installed version.
+# Parameter names differ across RERconverge versions; inspect the
+# installed function so weighting and scaling use supported arguments.
 args <- names(formals(getAllResiduals))
 
+# Transform branch lengths with square root and use master-tree tips.
 settings <- list(
   trees,
   useSpecies = trees$masterTree$tip.label,
@@ -33,6 +39,7 @@ if ("scale" %in% args) {
 
 cat("=== Calculating residuals ===\n")
 
+# Compute residuals; these are not hibernation-association statistics.
 rer <- do.call(getAllResiduals, settings)
 
 cat("=== Results ===\n")
