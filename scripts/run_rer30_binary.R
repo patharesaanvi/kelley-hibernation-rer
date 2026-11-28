@@ -105,7 +105,7 @@ cat("Association table dimensions:",
 
 # Figure 2: distribution of available association p-values.
 if ("P" %in% colnames(association)) {
-  p <- association$P[is.finite(association$P)]
+  p_values <- as.numeric(association[, "P"])\n  p <- p_values[is.finite(p_values)]
   if (length(p) > 0L) {
     pdf(file.path(outdir, "association_pvalues.pdf"), width = 8, height = 6)
     tryCatch(hist(p, breaks = 10, xlab = "Unadjusted p-value",
